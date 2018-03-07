@@ -152,31 +152,6 @@ public function index(){
     }
 
 
-    public function ttt(){
-
-        $url = 'https://sport147.cn?corpid=ding3d07a31c1957d50d35c2f4657eb6378f';
-        $ding['url'] = htmlspecialchars_decode($url);
-
-        $ding['jsapi_ticket'] = 'wDc7cK7RbPm4ovo7U9L5bSWq9CTNPLkTvJH27A14zGPcQIxJoru4pVOGFMfFtsUSVbjNGY64yPoeKqdmgSJFOj';
-        $ding['noncStr'] = ABd;
-        $ding['timestamp'] = 1519802507;
-
-        //$dd = 'jsapi_ticket=' . $ding['jsapi_ticket'] .'&nonceStr=' . $ding['noncStr'] .'&timestamp=' . $ding['timestamp'] .'&&url=' . $ding['url'];
-
-        $string = array(
-            'jsapi_ticket' => $ding['jsapi_ticket'],
-            'noncStr' => $ding['noncStr'],
-            'timeStamp' => $ding['timestamp'],
-            'url' => $ding['url']
-        );
-
-        $ding['signature'] = sha1(urldecode(http_build_query($string)));
-
-        //print_r($ding['signature']);
-
-
-    }
-
 
     public function user(){
 
@@ -233,7 +208,7 @@ public function index(){
         $allChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $ding['noncStr'] = '';
         for($i = 0 ; $i <= 16 ; $i++){
-            $ding['noncStr'] = substr($allChar , mt_rand(0,strlen($allChar)) - 1,3);
+            $ding['noncStr'] = substr($allChar , mt_rand(0,strlen($allChar)) - 1,7);
         }
 
         $noncStr = $ding['noncStr'];
