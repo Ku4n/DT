@@ -1,0 +1,541 @@
+[ 2018-02-25T16:36:18+08:00 ] ::1 /PPP/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014271s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.018128s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018194s ]
+
+[ 2018-02-25T16:36:51+08:00 ] ::1 /PPP/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+ERR: 非法操作:index
+
+[ 2018-02-25T16:37:02+08:00 ] ::1 /PPP/Home/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+ERR: 无法加载控制器:Get_access_new
+
+[ 2018-02-25T16:38:22+08:00 ] ::1 /PPP/Home/egg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000832s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000903s ]
+ERR: 无法加载控制器:Egg
+
+[ 2018-02-25T16:38:39+08:00 ] ::1 /PPP/Home/index/egg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000860s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.012804s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012882s ]
+
+[ 2018-02-25T16:38:53+08:00 ] ::1 /PPP/Home/index/get_access_token
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+ERR: 非法操作:get_access_token
+
+[ 2018-02-25T16:39:00+08:00 ] ::1 /PPP/Home/index/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+ERR: 参数错误或者未定义:kw
+
+[ 2018-02-25T16:39:26+08:00 ] ::1 /PPP/Home/index/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000892s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000968s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0377s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 68 行.
+
+[ 2018-02-25T16:40:22+08:00 ] ::1 /PPP/Home/index/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001133s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0330s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 68 行.
+ERR: Think\Controller:http_request方法不存在！
+
+[ 2018-02-25T16:40:45+08:00 ] ::1 /PPP/Home/index/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000738s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0324s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 68 行.
+ERR: Think\Controller:https_request方法不存在！
+
+[ 2018-02-25T16:40:47+08:00 ] ::1 /PPP/Home/index/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000950s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0444s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 68 行.
+ERR: Think\Controller:https_request方法不存在！
+
+[ 2018-02-25T16:41:45+08:00 ] ::1 /PPP/Home/index/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0373s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 73 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 76 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 80 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002558s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002671s ]
+
+[ 2018-02-25T16:41:51+08:00 ] ::1 /PPP/Home/index/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000954s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001006s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 73 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 76 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 80 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003019s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003161s ]
+
+[ 2018-02-25T16:42:28+08:00 ] ::1 /PPP/Home/index/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001475s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0405s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 73 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 76 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 80 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002817s ]
+
+[ 2018-02-25T16:42:52+08:00 ] ::1 /PPP/Home/index/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001050s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0375s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 73 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 76 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 80 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001373s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001455s ]
+
+[ 2018-02-25T16:42:53+08:00 ] ::1 /PPP/Home/index/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000701s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0458s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 73 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 76 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 80 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002783s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003249s ]
+
+[ 2018-02-25T16:44:15+08:00 ] ::1 /PPP/Home/index/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001978s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002053s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0328s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 73 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 76 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 80 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001094s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001165s ]
+
+[ 2018-02-25T16:47:26+08:00 ] ::1 /PPP/Home/index/get_access_new
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000713s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0497s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 73 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 76 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 80 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001155s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001205s ]
+
+[ 2018-02-25T16:49:17+08:00 ] ::1 /PPP/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+ERR: 非法操作:index
+
+[ 2018-02-25T16:50:48+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000575s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0180s ]
+
+[ 2018-02-25T16:52:13+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0297s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 54 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 57 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 61 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002250s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002397s ]
+
+[ 2018-02-25T17:03:22+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001131s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0291s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001062s ]
+
+[ 2018-02-25T17:03:33+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001456s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0452s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001227s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001292s ]
+
+[ 2018-02-25T17:05:34+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0355s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001211s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001274s ]
+
+[ 2018-02-25T17:05:47+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0320s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 57 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 58 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 58 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 64 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000766s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000808s ]
+
+[ 2018-02-25T17:06:29+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0414s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 58 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 59 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 59 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 61 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 65 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002365s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002499s ]
+
+[ 2018-02-25T17:10:14+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001549s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0234s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 56 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 56 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 63 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 64 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000831s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000874s ]
+
+[ 2018-02-25T17:12:45+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001500s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0252s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: CorpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 56 行.
+NOTIC: [8] Undefined index: CorpSecret C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 56 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 63 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 64 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000813s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000856s ]
+
+[ 2018-02-25T17:13:37+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0154s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: corpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 56 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 63 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 64 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000706s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000743s ]
+
+[ 2018-02-25T17:13:49+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: corpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 56 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 58 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 62 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001739s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001833s ]
+
+[ 2018-02-25T17:14:20+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0428s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: corpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 56 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 62 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 63 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001092s ]
+
+[ 2018-02-25T17:14:32+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0343s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: corpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 56 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 63 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 64 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000718s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000755s ]
+
+[ 2018-02-25T17:17:29+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003614s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0168s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: corpId C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 56 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 63 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 64 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000693s ]
+
+[ 2018-02-25T17:18:29+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000717s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0499s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 63 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 64 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001093s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001150s ]
+
+[ 2018-02-25T17:18:31+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000837s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0422s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 63 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 64 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001712s ]
+
+[ 2018-02-25T17:18:33+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0319s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 63 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 64 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000791s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000832s ]
+
+[ 2018-02-25T17:18:48+08:00 ] ::1 /PPP/Home/index/get_access
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0300s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 55 行.
+NOTIC: [8] Undefined index: jsapi_tickrt C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 63 行.
+NOTIC: [8] Undefined index: access_token C:\PHPstudy\WWW\PPP\App\Home\Controller\IndexController.class.php 第 64 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000762s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000798s ]
+

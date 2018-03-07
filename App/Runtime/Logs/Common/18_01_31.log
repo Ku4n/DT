@@ -1,0 +1,54 @@
+[ 2018-01-31T11:27:25+08:00 ] ::1 /ppp/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000985s ]
+ERR: 无法加载模块:Index
+
+[ 2018-01-31T16:21:27+08:00 ] ::1 /ppp/Homepage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011433s ]
+ERR: 无法加载模块:Homepage
+
+[ 2018-01-31T16:21:38+08:00 ] ::1 /ppp/Homepage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+ERR: 无法加载模块:Homepage
+
+[ 2018-01-31T16:21:44+08:00 ] ::1 /ppp/menu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+ERR: 无法加载模块:Menu
+
+[ 2018-01-31T17:17:39+08:00 ] ::1 /ppp/menu.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+ERR: 无法加载模块:Menu
+
+[ 2018-01-31T17:18:07+08:00 ] ::1 /ppp/menu/Homepage.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+ERR: 无法加载模块:Menu
+
+[ 2018-01-31T17:18:26+08:00 ] ::1 /ppp/menu/menu.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+ERR: 无法加载模块:Menu
+
+[ 2018-01-31T17:25:26+08:00 ] ::1 /ppp/menu/menu.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+ERR: 无法加载模块:Menu
+
+[ 2018-01-31T17:25:27+08:00 ] ::1 /ppp/menu/menu.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+ERR: 无法加载模块:Menu
+
