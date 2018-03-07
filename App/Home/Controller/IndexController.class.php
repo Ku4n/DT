@@ -207,13 +207,15 @@ public function index(){
     public function noncStr(){
         $allChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $ding['noncStr'] = '';
+        $randStr = str_shuffle($allChar);//打乱字符串
         for($i = 0 ; $i <= 16 ; $i++){
-            $ding['noncStr'] = substr($allChar , mt_rand(0,strlen($allChar)) - 1,7);
+            $ding['noncStr'] = substr($randStr , mt_rand(0,strlen($randStr)) - 1,32 );
         }
 
         $noncStr = $ding['noncStr'];
 
         return $noncStr;
+        //var_dump($noncStr);
     }
 
 
