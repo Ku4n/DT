@@ -9,8 +9,8 @@ class IndexController extends Controller {
         header('location:https://www.sport147.cn/');die;
     }*/
 
-public function egg(){
-    echo '123';
+public function index(){
+    $this -> display();
 }
     /**
      * Send a POST requst using cURL
@@ -70,15 +70,6 @@ public function egg(){
         return $result;
     }
 
-    public function get_noncStr(){
-        $allChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        $noncStr = '';
-        for($i = 0 ; $i < 16 ; $i++){
-            $noncStr = substr($allChar , mt_rand(0, strlen($allChar) - 1, 1));
-        }
-        return $noncStr;
-    }
-
 
     public function get_access(){//$kw , $url
         $dd = M('dt_appid');
@@ -126,10 +117,10 @@ public function egg(){
 
             $ding['signature'] = sha1($dd);
 
-            print_r($dd);
+/*            print_r($dd);
             echo '<br/>';
             var_dump($ding['signature']);
-            echo '<br/>';
+            echo '<br/>';*/
 
 
             $allChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -144,6 +135,8 @@ public function egg(){
 
             var_dump($plain);
 
+            $this -> ajaxReturn(htmlspecialchars($plain));
+
 
 
         }elseif(!$ding['jsapi_ticet'] || $current_time >= $ding['expires']){
@@ -156,19 +149,6 @@ public function egg(){
 
 
 
-
-
-
-
-
-/*        if($url){
-            $ding['url'] = htmlspecialchars_decode($url);
-            $string = array(
-                'jsapi_ticket' => $ticket_url;
-            );
-        }else{
-            return '$url is not difind';
-        }*/
     }
 
 
@@ -197,13 +177,110 @@ public function egg(){
 
     }
 
-/*    public function noncStr(){
+
+    public function user(){
+
+        $map['name'] = 'zhao';
+        $map['tel'] = '1371';
+
+        $string = array(
+            "name" => $map['name'],
+            "tel" => $map['tel']
+        );
+
+        $this -> ajaxReturn($string);
+    }
+
+    public function get_access_new(){
+        $ding = M('dt_appid') -> find();
+
+
+        $corpId = $ding['corpid'];
+        $corpsecret = $ding['corpsecret'];
+
+        if($corpId !== null || $corpsecret !== null){
+            $token_url = 'https://oapi.dingtalk.com/gettoken?corpid='.$ding['corpid'].'&corpsecret='.$ding['corpsecret'];
+            $data = json_decode(self::curl_get($token_url) , true);
+            if($data['errmsg'] !== 'ok'){
+                return false;
+            }else{
+                $ding['time'] = $data['expires_in'];
+                $ding['access_token'] = $data['access_token'];
+
+                return $ding;
+            }
+        }
+    }
+
+    public function get_ticket_new(){
+        $token = self::get_access_new();
+        $access_token = $token['access_token'];
+        $ticket_url = 'https://oapi.dingtalk.com/get_jsapi_ticket?access_token='.$access_token.'';
+        $data = json_decode(self::curl_get($ticket_url) , true);
+
+        if($data['errmsg'] !== 'ok'){
+            return false;
+        }else{
+            $ding['ticket'] = $data['ticket'];
+            $ding['ticket_time'] = $data['expires_in'];
+
+            return $ding;
+        }
+
+    }
+
+    public function noncStr(){
         $allChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $ding['noncStr'] = '';
-        for($i = 0 ; $i <= 6 ; $i++){
+        for($i = 0 ; $i <= 16 ; $i++){
             $ding['noncStr'] = substr($allChar , mt_rand(0,strlen($allChar)) - 1,3);
         }
-        var_dump($ding['noncStr']);
-    }*/
+
+        $noncStr = $ding['noncStr'];
+
+        return $noncStr;
+    }
+
+
+    public function jsApi(){
+        $get_access = self::get_access_new();
+        $get_ticket = self::get_ticket_new();
+        $noncStr = self::noncStr();
+        $url = $get_access['url'];
+
+        $ticket = $get_ticket['ticket'];
+        $time = strtotime('now');
+
+        $dd = 'jsapi_ticket=' . $ticket .'&noncestr=' . $noncStr .'&timestamp=' . $time .'&url=' . $url;
+        $signature = sha1($dd);
+
+        return $signature;
+    }
+
+
+    public function sign(){
+
+        $signature = self::jsApi();
+        $corp = self::get_access_new();
+        $time = strtotime('now');
+        $noncStr = self::noncStr();
+
+
+        $corpId = $corp['corpid'];
+        $agentId = $corp['agentid'];
+
+        $string = array(
+            'agentid' => $agentId,
+            'corpid' => $corpId,
+            'timeStamp' => $time,
+            'nonceStr' => $noncStr,
+            'signature' => $signature
+        );
+
+        //return $string;
+
+        $this -> ajaxReturn($string);
+    }
+
 
 }

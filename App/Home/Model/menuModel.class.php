@@ -19,7 +19,7 @@ class menuModel extends Model{
         $endTime = strtotime("23:59:59");
         $zero = strtotime("00:00:00");
         $nine = strtotime("09:00:00");
-        $noewtime = date('Y-m-d , ')
+        $noewtime = date('Y-m-d , ');
 
     }
 }

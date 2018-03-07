@@ -24,6 +24,8 @@ class menu extends Controller{
     {
         $list = M('signup');
 
+        // 记得添加accesstoken上的判定 返回值200？ 还是其他返回
+        //如果存在其他 要否弹出提示
 
     }
 

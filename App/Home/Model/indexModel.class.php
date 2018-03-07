@@ -11,8 +11,8 @@ use Think\Model;
 
 class indexModel extends Model{
 
-    public function index()
+    public function user()
     {
-
+        return true;
     }
 }
