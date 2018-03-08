@@ -9,9 +9,9 @@ class IndexController extends Controller {
         header('location:https://www.sport147.cn/');die;
     }*/
 
-public function index(){
-    $this -> display();
-}
+    public function index(){
+        echo 123;
+    }
     /**
      * Send a POST requst using cURL
      * @param string $url to request
@@ -71,100 +71,6 @@ public function index(){
     }
 
 
-    public function get_access(){//$kw , $url
-        $dd = M('dt_appid');
-        $ding = $dd -> find();
-        $current_time = date_timestamp_get(date_create());
-        //$ding['timestamp'] = $current_time;
-
-        $ding['timestamp'] = '1519802507';
-
-        if (!$ding['access_token'] || $current_time >= $ding['expires']){
-            $token_url = 'https://oapi.dingtalk.com/gettoken?corpid='.$ding['corpid'].'&corpsecret='.$ding['corpsecret'];
-            $data = json_decode(self::curl_get($token_url) , true);
-            $ding['access_token'] = $data['access_token'];
-            //var_dump($ding['access_token']);
-            $ticket_url = 'https://oapi.dingtalk.com/get_jsapi_ticket?access_token='.$ding['access_token'].'';
-            //var_dump($ticket_url);
-            $data = json_decode(self::curl_get($ticket_url) , true);
-            $ding['jsapi_ticket'] = $data['ticket'];
-
-
-            // noncStr 的随机生成
-/*            $allChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            $ding['noncStr'] = '';
-            for($i = 0 ; $i <= 6 ; $i++){
-                $ding['noncStr'] = substr($allChar , mt_rand(0,strlen($allChar)) - 1,3);
-            }*/
-
-            $ding['noncStr'] = 'ABd';
-            // print_r($ding['jsapi_ticket']);
-
-            $ding['url'] = 'https://sport147.cn';
-
-/*            $string = array(
-                'jsapi_ticket' => $ding['jsapi_ticket'],
-                'noncstr' => $ding['noncStr'],
-                'timestamp' => $ding['timestamp'],
-                'url' => $ding['url']
-            );
-
-            ksort($string);
-            $ding['signature'] = sha1(urldecode(http_build_query($string)));
-*/
-
-            $dd = 'jsapi_ticket=' . $ding['jsapi_ticket'] .'&noncestr=' . $ding['noncStr'] .'&timestamp=' . $ding['timestamp'] .'&url=' . $ding['url'];
-
-            $ding['signature'] = sha1($dd);
-
-/*            print_r($dd);
-            echo '<br/>';
-            var_dump($ding['signature']);
-            echo '<br/>';*/
-
-
-            $allChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            $ding['noncStr'] = '';
-            for($i = 0 ; $i <= 6 ; $i++) {
-                $ding['noncStr'] = substr($allChar, mt_rand(0, strlen($allChar)) - 1, 3);
-            }
-
-            $ding['agentid'] = 161276226;
-
-            $plain = 'url='. $ding['url'] .'&noncstr=' . $ding['noncStr'] . '&agentid=' . $ding['agentid'] . '&timestamp=' . $ding['timestamp'] . '&corpId=' . $ding['corpid'] .'&signature=' . $ding['signature'];
-
-            var_dump($plain);
-
-            $this -> ajaxReturn(htmlspecialchars($plain));
-
-
-
-        }elseif(!$ding['jsapi_ticet'] || $current_time >= $ding['expires']){
-            $ticket_url = 'https://oapi.dingtalk.com/get_jsapi_ticket?access_token='.$ding['access_token'].'';
-            var_dump($ticket_url);
-            $data = json_decode(self::https_request($ticket_url) , true);
-            $ding['jsapi_ticket'] = $data['ticket'];
-            var_dump($ding['jsapi_ticket']);
-        }
-
-
-
-    }
-
-
-
-    public function user(){
-
-        $map['name'] = 'zhao';
-        $map['tel'] = '1371';
-
-        $string = array(
-            "name" => $map['name'],
-            "tel" => $map['tel']
-        );
-
-        $this -> ajaxReturn($string);
-    }
 
     public function get_access_new(){
         $ding = M('dt_appid') -> find();
