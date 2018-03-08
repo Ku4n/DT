@@ -10,9 +10,8 @@ class IndexController extends Controller {
     }*/
 
     public function index(){
-        //header('location:sign');die;
-        //$this -> display();
-        //header('location:View/Index/index.html');
+        //header('location:Home/Index/sign');die;
+        //header('location:./View/Index/index.html');
         $this -> display('index');
 
     }
