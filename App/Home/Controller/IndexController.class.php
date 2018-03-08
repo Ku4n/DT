@@ -10,7 +10,11 @@ class IndexController extends Controller {
     }*/
 
     public function index(){
-        echo 123;
+        //header('location:sign');die;
+        //$this -> display();
+        //header('location:View/Index/index.html');
+        $this -> display('index');
+
     }
     /**
      * Send a POST requst using cURL
