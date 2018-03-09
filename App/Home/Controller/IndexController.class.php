@@ -85,10 +85,7 @@ class IndexController extends Controller {
 
     public function get_access_new(){
 
-        header('Access-Control-Allow-Origin:*');
-        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
-        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
-        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);
+        self::__construct();
 
         $ding = M('dt_appid') -> find();
 
@@ -112,10 +109,7 @@ class IndexController extends Controller {
 
     public function get_ticket_new(){
 
-        header('Access-Control-Allow-Origin:*');
-        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
-        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
-        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);
+        self::__construct();
 
         $token = self::get_access_new();
         $access_token = $token['access_token'];
@@ -135,10 +129,7 @@ class IndexController extends Controller {
 
     public function noncStr(){
 
-        header('Access-Control-Allow-Origin:*');
-        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
-        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
-        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);
+        self::__construct();
 
         $allChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $ding['noncStr'] = '';
@@ -156,10 +147,7 @@ class IndexController extends Controller {
 
     public function jsApi(){
 
-        header('Access-Control-Allow-Origin:*');
-        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
-        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
-        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);
+        self::__construct();
 
         $get_access = self::get_access_new();
         $get_ticket = self::get_ticket_new();
@@ -175,13 +163,21 @@ class IndexController extends Controller {
         return $signature;
     }
 
+    public function __construct(){
+/*        parent::__construct();
+        header('Access-Control-Allow-Origin:*');
+        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
+        header('Access-Control-Allow-Headers: Content-Type,Accept');
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);*/
+        // header('Access-Control-Allow-Origin: *');
+        //header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        // header('Access-Control-Allow-Methods: GET, POST, PUT ,OPTIONS');
+    }
+
 
     public function sign(){
 
-        header('Access-Control-Allow-Origin:*');
-        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
-        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
-        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);
+        self::__construct();
 
         $signature = self::jsApi();
         $corp = self::get_access_new();
