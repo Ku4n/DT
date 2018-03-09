@@ -24,6 +24,7 @@ class IndexController extends Controller {
      */
     public function curl_post($url, array $post = NULL, array $options = array())
     {
+        header("Access-Control-Allow-Origin: *");
         $defaults = array(
             CURLOPT_POST => 1,
             CURLOPT_HEADER => 0,
@@ -54,6 +55,13 @@ class IndexController extends Controller {
      */
     public function curl_get($url, array $get = NULL, array $options = array())
     {
+
+        header('Access-Control-Allow-Origin:*');
+        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
+        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);
+
+        /*header("Access-Control-Allow-Origin: *");*/
         $defaults = array(
             CURLOPT_URL => $url. (strpos($url, '?') === FALSE ? '?' : ''). http_build_query($get),
             CURLOPT_HEADER => 0,
@@ -76,6 +84,12 @@ class IndexController extends Controller {
 
 
     public function get_access_new(){
+
+        header('Access-Control-Allow-Origin:*');
+        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
+        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);
+
         $ding = M('dt_appid') -> find();
 
 
@@ -97,6 +111,12 @@ class IndexController extends Controller {
     }
 
     public function get_ticket_new(){
+
+        header('Access-Control-Allow-Origin:*');
+        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
+        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);
+
         $token = self::get_access_new();
         $access_token = $token['access_token'];
         $ticket_url = 'https://oapi.dingtalk.com/get_jsapi_ticket?access_token='.$access_token.'';
@@ -114,6 +134,12 @@ class IndexController extends Controller {
     }
 
     public function noncStr(){
+
+        header('Access-Control-Allow-Origin:*');
+        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
+        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);
+
         $allChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $ding['noncStr'] = '';
         $randStr = str_shuffle($allChar);//打乱字符串
@@ -129,6 +155,12 @@ class IndexController extends Controller {
 
 
     public function jsApi(){
+
+        header('Access-Control-Allow-Origin:*');
+        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
+        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);
+
         $get_access = self::get_access_new();
         $get_ticket = self::get_ticket_new();
         $noncStr = self::noncStr();
@@ -145,6 +177,11 @@ class IndexController extends Controller {
 
 
     public function sign(){
+
+        header('Access-Control-Allow-Origin:*');
+        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
+        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);
 
         $signature = self::jsApi();
         $corp = self::get_access_new();
