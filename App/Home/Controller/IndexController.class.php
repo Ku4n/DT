@@ -1,19 +1,23 @@
 <?php
 namespace Home\Controller;
+use MongoDB\Driver\Server;
 use Think\Controller;
 
-class IndexController extends Controller {
 
-/*    public function index()
-    {
-        header('location:https://www.sport147.cn/');die;
-    }*/
+class IndexController extends CoController {
+
+    /*    public function index()
+        {
+            header('location:https://www.sport147.cn/');die;
+        }*/
 
     public function index(){
         //header('location:Home/Index/sign');die;
         //header('location:./View/Index/index.html');
-        $this -> display('index');
-
+        echo 123;
+        $s = 123123;
+        $this -> assign(s , $s);
+        $this -> display();
     }
     /**
      * Send a POST requst using cURL
@@ -24,7 +28,7 @@ class IndexController extends Controller {
      */
     public function curl_post($url, array $post = NULL, array $options = array())
     {
-        header("Access-Control-Allow-Origin: *");
+
         $defaults = array(
             CURLOPT_POST => 1,
             CURLOPT_HEADER => 0,
@@ -56,10 +60,6 @@ class IndexController extends Controller {
     public function curl_get($url, array $get = NULL, array $options = array())
     {
 
-        header('Access-Control-Allow-Origin:*');
-        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
-        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
-        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);
 
         /*header("Access-Control-Allow-Origin: *");*/
         $defaults = array(
@@ -85,8 +85,6 @@ class IndexController extends Controller {
 
     public function get_access_new(){
 
-        self::__construct();
-
         $ding = M('dt_appid') -> find();
 
 
@@ -109,8 +107,6 @@ class IndexController extends Controller {
 
     public function get_ticket_new(){
 
-        self::__construct();
-
         $token = self::get_access_new();
         $access_token = $token['access_token'];
         $ticket_url = 'https://oapi.dingtalk.com/get_jsapi_ticket?access_token='.$access_token.'';
@@ -129,14 +125,10 @@ class IndexController extends Controller {
 
     public function noncStr(){
 
-        self::__construct();
-
         $allChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $ding['noncStr'] = '';
         $randStr = str_shuffle($allChar);//打乱字符串
-        for($i = 0 ; $i <= 16 ; $i++){
-            $ding['noncStr'] = substr($randStr , mt_rand(0,strlen($randStr)) - 1,32 );
-        }
+        $ding['noncStr'] = substr($randStr , mt_rand(0,strlen($randStr)) - 1,32 );
 
         $noncStr = $ding['noncStr'];
 
@@ -146,8 +138,6 @@ class IndexController extends Controller {
 
 
     public function jsApi(){
-
-        self::__construct();
 
         $get_access = self::get_access_new();
         $get_ticket = self::get_ticket_new();
@@ -163,21 +153,12 @@ class IndexController extends Controller {
         return $signature;
     }
 
-    public function __construct(){
-/*        parent::__construct();
-        header('Access-Control-Allow-Origin:*');
-        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
-        header('Access-Control-Allow-Headers: Content-Type,Accept');
-        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') exit(0);*/
-        // header('Access-Control-Allow-Origin: *');
-        //header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-        // header('Access-Control-Allow-Methods: GET, POST, PUT ,OPTIONS');
-    }
+
 
 
     public function sign(){
 
-        self::__construct();
+
 
         $signature = self::jsApi();
         $corp = self::get_access_new();
@@ -199,7 +180,11 @@ class IndexController extends Controller {
         //return $string;
 
         $this -> ajaxReturn($string);
+
+
     }
+
+
 
 
 }
