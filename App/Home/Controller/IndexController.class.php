@@ -14,10 +14,10 @@ class IndexController extends CoController {
     public function index(){
         //header('location:Home/Index/sign');die;
         //header('location:./View/Index/index.html');
-        echo 123;
+        echo 13;
         $s = 123123;
-        $this -> assign(s , $s);
-        $this -> display();
+/*        $this -> assign(s , $s);
+        $this -> display('Index');*/
     }
     /**
      * Send a POST requst using cURL
@@ -157,7 +157,6 @@ class IndexController extends CoController {
 
 
     public function sign(){
-
 
 
         $signature = self::jsApi();
