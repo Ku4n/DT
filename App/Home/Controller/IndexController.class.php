@@ -100,6 +100,8 @@ class IndexController extends Controller {
                 $ding['time'] = $data['expires_in'];
                 $ding['access_token'] = $data['access_token'];
 
+
+                # dump($data);
                 return $ding;
             }
         }
@@ -119,6 +121,7 @@ class IndexController extends Controller {
             $ding['ticket'] = $data['ticket'];
             $ding['ticket_time'] = $data['expires_in'];
 
+            # dump($data);
             return $ding;
         }
 
@@ -151,6 +154,7 @@ class IndexController extends Controller {
         $time = strtotime('now');
 
         $dd = 'jsapi_ticket=' . $ticket .'&noncestr=' . $noncStr .'&timestamp=' . $time .'&url=' . $url;
+
         $signature = sha1($dd);
 
         $page = array(
@@ -159,6 +163,8 @@ class IndexController extends Controller {
             'noncStr' => $noncStr,
         );
 
+        # dump($dd);
+        # dump($signature);
         return $page;
     }
 
@@ -167,7 +173,6 @@ class IndexController extends Controller {
     public function sign() // 签名包需要获取到签名时的 nonceStr ， timeStamp 以及 corpid 和 agentid 并返回给前端
     {
 
-        $signature = self::jsApi();
         $corp = self::get_access_new();
         $page = self::jsApi();
 
@@ -195,6 +200,14 @@ class IndexController extends Controller {
 
     }
 
+    public function get_user()
+    {
+        $db = self::get_access_new();
+        $access = $db['access_token'];
+        $user ='https://oapi.dingtalk.com/user/get?access_token='.$access . '&userid=赵家宽';
+        $data = json_decode(self::curl_get($user) , true);
+        dump($data);
+    }
 
 
 
