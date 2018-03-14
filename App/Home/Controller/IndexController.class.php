@@ -3,13 +3,11 @@ namespace Home\Controller;
 use MongoDB\Driver\Server;
 use Think\Controller;
 
+header('content-type:application:json;charset=utf8');
+header('Access-Control-Allow-Origin:*');   // 指定允许其他域名访问
+header('Access-Control-Allow-Headers:x-requested-with,content-type');// 响应头设置
 
-class IndexController extends CoController {
-
-    /*    public function index()
-        {
-            header('location:https://www.sport147.cn/');die;
-        }*/
+class IndexController extends Controller {
 
     public function index(){
         //header('location:Home/Index/sign');die;
@@ -19,6 +17,8 @@ class IndexController extends CoController {
 /*        $this -> assign(s , $s);
         $this -> display('Index');*/
     }
+
+
     /**
      * Send a POST requst using cURL
      * @param string $url to request
@@ -83,10 +83,10 @@ class IndexController extends CoController {
 
 
 
-    public function get_access_new(){
+    public function get_access_new() // 生成并返回access_token
+    {
 
         $ding = M('dt_appid') -> find();
-
 
         $corpId = $ding['corpid'];
         $corpsecret = $ding['corpsecret'];
@@ -105,7 +105,8 @@ class IndexController extends CoController {
         }
     }
 
-    public function get_ticket_new(){
+    public function get_ticket_new() // 生成并返回ticket
+    {
 
         $token = self::get_access_new();
         $access_token = $token['access_token'];
@@ -123,7 +124,8 @@ class IndexController extends CoController {
 
     }
 
-    public function noncStr(){
+    public function noncStr() // 生成随机数
+    {
 
         $allChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $ding['noncStr'] = '';
@@ -137,7 +139,8 @@ class IndexController extends CoController {
     }
 
 
-    public function jsApi(){
+    public function jsApi() // 签名
+    {
 
         $get_access = self::get_access_new();
         $get_ticket = self::get_ticket_new();
@@ -150,19 +153,28 @@ class IndexController extends CoController {
         $dd = 'jsapi_ticket=' . $ticket .'&noncestr=' . $noncStr .'&timestamp=' . $time .'&url=' . $url;
         $signature = sha1($dd);
 
-        return $signature;
+        $page = array(
+            'signature' => $signature,
+            'time' => $time,
+            'noncStr' => $noncStr,
+        );
+
+        return $page;
     }
 
 
 
-
-    public function sign(){
-
+    public function sign() // 签名包需要获取到签名时的 nonceStr ， timeStamp 以及 corpid 和 agentid 并返回给前端
+    {
 
         $signature = self::jsApi();
         $corp = self::get_access_new();
-        $time = strtotime('now');
-        $noncStr = self::noncStr();
+        $page = self::jsApi();
+
+
+        $time = $page['time'];
+        $nonceStr = $page['noncStr'];
+        $signature = $page['signature'];
 
 
         $corpId = $corp['corpid'];
@@ -172,13 +184,13 @@ class IndexController extends CoController {
             'agentid' => $agentId,
             'corpid' => $corpId,
             'timeStamp' => $time,
-            'nonceStr' => $noncStr,
+            'nonceStr' => $nonceStr,
             'signature' => $signature
         );
 
         //return $string;
 
-        $this -> ajaxReturn($string);
+        $this -> ajaxReturn($string , 'json');
 
 
     }
