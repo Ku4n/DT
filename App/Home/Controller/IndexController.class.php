@@ -10,12 +10,8 @@ header('Access-Control-Allow-Headers:x-requested-with,content-type');// 响应�
 class IndexController extends Controller {
 
     public function index(){
-        //header('location:Home/Index/sign');die;
-        //header('location:./View/Index/index.html');
-        echo 13;
-        $s = 123123;
-/*        $this -> assign(s , $s);
-        $this -> display('Index');*/
+
+        echo 1;// 添加一个链接 ， 点击链接再次登录获取code
     }
 
 
@@ -157,6 +153,7 @@ class IndexController extends Controller {
 
         $signature = sha1($dd);
 
+
         $page = array(
             'signature' => $signature,
             'time' => $time,
@@ -189,7 +186,7 @@ class IndexController extends Controller {
             'agentid' => $agentId,
             'corpid' => $corpId,
             'timeStamp' => $time,
-            'nonceStr' => $nonceStr,
+            'noncestr' => $nonceStr,
             'signature' => $signature
         );
 
@@ -200,13 +197,37 @@ class IndexController extends Controller {
 
     }
 
+    public function get_code(HttpServletRequest $request)
+    {
+        if($_GET['code']){
+            $code = $_GET['code'];
+            dump($code);
+        }
+    }
+
     public function get_user()
     {
         $db = self::get_access_new();
         $access = $db['access_token'];
-        $user ='https://oapi.dingtalk.com/user/get?access_token='.$access . '&userid=赵家宽';
+        $user ='https://oapi.dingtalk.com/user/getuserinfo?access_token='.$access.'&code='.'46e09bed5cf63acb8ffc66a54b9a84ec'.'';
         $data = json_decode(self::curl_get($user) , true);
+
+        if($data['errcode'] !== 0) {
+            $this -> error("获取code失败,请稍后再尝试"  , 'Home/index/index');
+        }
+        else{
+            $userid = $data['userid'];
+        }
+
+/*        if($data['errcode'] !== 0){
+            echo 1;
+        }else{
+            echo 2;
+        }*/
+
+        dump($user);
         dump($data);
+        dump($userid);
     }
 
 
