@@ -11,7 +11,7 @@ class IndexController extends Controller {
 
     public function index(){
 
-        echo 1;// 添加一个链接 ， 点击链接再次登录获取code
+        echo 12;// 添加一个链接 ， 点击链接再次登录获取code
     }
 
 
