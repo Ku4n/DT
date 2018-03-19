@@ -19,7 +19,7 @@ class LunchModel extends Model
         $map = D('signup');
 
         $data = array(
-            'uesr' => $userName,
+            'uesrName' => $userName,
             'userId' => $userId,
             'sign_time' => $now,
             'time' => $time,
@@ -29,14 +29,12 @@ class LunchModel extends Model
 
         if ($add) {
             $db = D('user');
-            $update = $db -> where(['userId' => $userId]) -> select();
 
-            if ($update['user'] = $userName) {
-                $update['status'] = 1;
+            $update = $db -> where(array(['userId' => $userId] , ['userName' => $userName])) -> fetchSql(true) -> save(['status' => 1]);
 
-                $change = $db -> save($update);
+            // dump($update);
 
-                if ($change) {
+                if ($update) {
                     $record = M('log_record');
 
                     $operate = 1;
@@ -49,10 +47,12 @@ class LunchModel extends Model
                         'time' => $time
                     );
 
-                    $log = $record->add($map);
+                    $log = $record -> fetchSql(true) -> add($map);
+
+                    // dump($log);
 
                     if ($log) {
-                        return true;
+                        return 0;
                     } else {
                         return 3;
                     }
@@ -60,19 +60,39 @@ class LunchModel extends Model
                     return 2;
                 }
 
-
-            }
-        } else {
-            return 1;
+            } else {
+            return false;
         }
+
     }
 
 
     public function Del($userName, $userId, $now, $time)// userName 报名人姓名 , userId 报名人ID , now 当前时间戳 , time date格式时间
     {
+        $db = D('signup');
+
+        $del = $db -> where(array(['userId' == $userId])) -> find();
+
+        dump($del);
+    }
+
+
+    public function test($userName , $userId , $now , $time)
+    {
+        $map = D('signup');
+
+        $data = array(
+            'uesr' => $userName,
+            'userId' => $userId,
+            'sign_time' => $now,
+            'time' => $time,
+        );
+
+        $add = $map -> add($data);
 
 
     }
+
 
 
 }

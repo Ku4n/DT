@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="770407e9-b99d-4671-9f3a-6fff31142927" name="devding" url="http://devding.sport147.cn">
-        <fileTransfer host="devding.sport147.cn" port="22" privateKey="C:\Users\os\.ssh\id_rsa" rootFolder="/home/ding" accessType="SFTP" keyPair="true">
+        <fileTransfer host="devding.sport147.cn" port="22" privateKey="C:\Users\赵家宽\.ssh\id_rsa" rootFolder="/home/ding" accessType="SFTP" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
