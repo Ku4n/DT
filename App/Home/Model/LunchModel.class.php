@@ -67,33 +67,59 @@ class LunchModel extends Model
     }
 
 
-    public function Del($userName, $userId, $now, $time)// userName 报名人姓名 , userId 报名人ID , now 当前时间戳 , time date格式时间
+    public function Del($userName , $userId , $now , $time)// userName 报名人姓名 , userId 报名人ID , now 当前时间戳 , time date格式时间
     {
+
         $db = D('signup');
 
-        $del = $db -> where(array(['userId' == $userId])) -> find();
+        $del = $db -> order('sign_time desc') -> limit(1) -> find();
 
-        dump($del);
+        if($del['user'] == $userName){
+
+            $del = $db -> order('sign_time desc') -> limit(1)-> delete();
+
+            if($del){
+
+                $zero = D('user');
+
+                $change = $zero -> where(array(['userName' => $userName] , ['userId' => $userId])) -> save(['status' => 0]);
+
+
+                dump($change);
+
+                if($change){
+
+                    $db = D('log_record');
+
+                    $map = array(
+                        'user' => $userName,
+                        'userId' => $userId,
+                        'operate' => 0,
+                        'update_time' => $now,
+                        'time' => $time,
+                    );
+
+                    $add = $db -> fetchSql(true) -> add($map);
+
+                    dump($add);
+
+                    if($add){
+                        return true;
+                    }else{
+                        return 0;
+                    }
+                }else{
+                    return 1;
+                }
+
+            }else{
+                return 2;
+            }
+
+        }else{
+            return 3;
+        }
     }
-
-
-    public function test($userName , $userId , $now , $time)
-    {
-        $map = D('signup');
-
-        $data = array(
-            'uesr' => $userName,
-            'userId' => $userId,
-            'sign_time' => $now,
-            'time' => $time,
-        );
-
-        $add = $map -> add($data);
-
-
-    }
-
-
 
 }
 
