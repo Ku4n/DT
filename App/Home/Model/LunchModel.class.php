@@ -14,12 +14,12 @@ use Think\Model;
 class LunchModel extends Model
 {
 
-    public function Add($userName, $userId, $now, $time)// userName 报名人姓名 , userId 报名人ID , now 当前时间戳 , time date格式时间
+    public function Add($userId, $now, $time)// userId 报名人ID , now 当前时间戳 , time date格式时间
     {
-        $map = D('signup');
+
+        $map = M('signup');
 
         $data = array(
-            'uesrName' => $userName,
             'userId' => $userId,
             'sign_time' => $now,
             'time' => $time,
@@ -27,98 +27,82 @@ class LunchModel extends Model
 
         $add = $map -> add($data);
 
-        if ($add) {
-            $db = D('user');
+        if ($add == true) {
+            $db = M('user');
 
-            $update = $db -> where(array(['userId' => $userId] , ['userName' => $userName])) -> fetchSql(true) -> save(['status' => 1]);
+            $update = $db -> where(array(['userId' => $userId] )) -> save(['status' => 1]);
 
-            // dump($update);
+            if ($update == true) {
+                $record = M('log_record');
 
-                if ($update) {
-                    $record = M('log_record');
+                $operate = 1;
 
-                    $operate = 1;
+                $map = array(
+                    'userId' => $userId,
+                    'operate' => $operate,
+                    'update_time' => $now,
+                    'time' => $time
+                );
 
-                    $map = array(
-                        'user' => $userName,
-                        'userId' => $userId,
-                        'operate' => $operate,
-                        'update_time' => $now,
-                        'time' => $time
-                    );
+                $log = $record -> add($map);
 
-                    $log = $record -> fetchSql(true) -> add($map);
-
-                    // dump($log);
-
-                    if ($log) {
-                        return 0;
-                    } else {
-                        return 3;
-                    }
+                if ($log == true) {
+                    echo true;
                 } else {
-                    return 2;
+                    return 0;
                 }
-
             } else {
-            return false;
+                return 1;
+            }
+
+        } else {
+            return 2;
         }
 
     }
 
 
-    public function Del($userName , $userId , $now , $time)// userName 报名人姓名 , userId 报名人ID , now 当前时间戳 , time date格式时间
+    public function Del($userId , $now , $time)// userName 报名人姓名 , userId 报名人ID , now 当前时间戳 , time date格式时间
     {
 
-        $db = D('signup');
+        $db = M('signup');
 
-        $del = $db -> order('sign_time desc') -> limit(1) -> find();
+        $del = $db -> where(['userId' => $userId]) -> order('sign_time desc') -> limit(1) -> delete();
 
-        if($del['user'] == $userName){
+        if($del == true){
 
-            $del = $db -> order('sign_time desc') -> limit(1)-> delete();
+            $zero = M('user');
 
-            if($del){
+            $change = $zero -> where(array(['userId' => $userId])) -> save(['status' => 0]);
 
-                $zero = D('user');
+            if($change == true){
 
-                $change = $zero -> where(array(['userName' => $userName] , ['userId' => $userId])) -> save(['status' => 0]);
+                $db = M('log_record');
 
+                $map = array(
+                    'userId' => $userId,
+                    'operate' => 0,
+                    'update_time' => $now,
+                    'time' => $time,
+                );
 
-                dump($change);
+                $add = $db -> add($map);
 
-                if($change){
+                dump($add == true);
 
-                    $db = D('log_record');
-
-                    $map = array(
-                        'user' => $userName,
-                        'userId' => $userId,
-                        'operate' => 0,
-                        'update_time' => $now,
-                        'time' => $time,
-                    );
-
-                    $add = $db -> fetchSql(true) -> add($map);
-
-                    dump($add);
-
-                    if($add){
-                        return true;
-                    }else{
-                        return 0;
-                    }
+                if($add){
+                    return true;
                 }else{
-                    return 1;
+                    return 0;
                 }
-
             }else{
-                return 2;
+                return 1;
             }
 
         }else{
-            return 3;
+            return 2;
         }
+
     }
 
 }

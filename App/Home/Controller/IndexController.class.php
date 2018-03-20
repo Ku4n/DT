@@ -231,5 +231,27 @@ class IndexController extends Controller {
     }
 
 
+    public function login()
+    {
+
+        $userId = 'manager2651';
+        $userName = "赵家宽";
+
+
+        $check = new \Home\Model\IndexModel('user');
+        $res = $check -> login($userId);
+
+        print_r($res);
+
+/*        if($res == true){
+            echo 'true';
+        }elseif ($res == 0){
+            echo 0;
+        }elseif ($res == 1){
+            echo 1;
+        }*/
+    }
+
+
 
 }
