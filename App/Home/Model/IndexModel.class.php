@@ -19,13 +19,13 @@ class IndexModel extends Model
 
 
         // $time = date('Y-m-d H:i:s');
-        $time = '2018-3-20 17:57:12';
+        $time = '2018-3-21 00:57:12';
         $now = strtotime($time);
         $startTime = strtotime(date("14:00:00"));
         $endTime = strtotime(date("23:59:59"));
         $zero = strtotime(date("00:00:00"));
         $lastTime = strtotime(date("10:30:00"));
-        $yeseterday_two = $lastTime - (3600*19); // 昨天下午14点
+        $yeseterday_two = $lastTime - (3600*20 + 1800); // 昨天下午14点
         $yesterday_nine = $lastTime - (3600*24); // 昨天早上9点
         $two = $lastTime - (3600*44 + 1800); // 前天下午2点
 
@@ -33,7 +33,9 @@ class IndexModel extends Model
 
 
         if($now < $startTime && $now > $lastTime){
-            echo '不在报名时间内！';
+
+            return false;
+
         }elseif ($now > $startTime && $now < $endTime){ // 时间在当天14点到晚上24前
 
             $check = $db -> where(array(['userId' => $userId])) -> find();
@@ -46,63 +48,88 @@ class IndexModel extends Model
 
                 $res = $check -> where($where) -> order('sign_time desc') -> find();
 
-                if($res == true){
+                if($res == true){ // 当天是否报名
 
-                    echo "您今天已报名！";
+                    return 2;
 
-                }elseif ($res == false){
-
-                    dump(111);
+                }elseif ($res == false){ // 当天没有报名 ， 确定前天有无报名
 
                     $check = M('signup');
                     $where['sign_time'] = array(array('lt' , $lastTime) , array('gt' , $two));
                     $where['userId'] = $userId;
 
-                    $res = $check -> where($where) -> fetchSql(true) -> find();
+                    $res = $check -> where($where) -> find();
 
-                    dump($res);
+                    // dump($res);
+                    if($res == true){
+                        // dump($res);
+                        $db = M('user');
+
+                        $where['userId'] = $userId;
+
+                        $update = $db -> where($where) -> fetchSql(true) -> save(['status' => 0]);
+
+                        if($update == true){
+                            return true;
+                        }elseif ($update == false){
+                            return 0;
+                        }
+
+                    }elseif($res == false){
+                        return 1;
+                    }
                 }
 
-/*                if($res == true){
-                    echo '您今天已报名！';
-                }else{
-
-                }*/
-
-
             }elseif ($check['status'] == 0){ // 判断前一天是否报名
-
-                $check = M('signup');
-                $where['sign_time'] = array(array('lt' , $yesterday_nine) , array('gt' , $yeseterday_two) , 'AND');
-                $where['userId'] = $userId;
-
-                $res = $check -> where($where) -> fetchSql(true) -> order('sign_time desc') ->  find();
-
-                dump($res);
-
+                return 2;
             }
 
-
-
-
-        }elseif ($now < $lastTime && $now > $zero){
+        }elseif ($now < $lastTime && $now > $zero){ // 第二天0点到10点30
 
             $check = $db -> where(array(['userId' => $userId])) -> find();
 
-            if($check['status'] == 1){
-
-                echo '您今天已报名！';
-
-            }elseif ($check['status'] == 0){
+            if($check['status'] == 1){ // 判断是当天报名还是前一天报的名
 
                 $check = M('signup');
-                $where['sign_time'] = array(array('lt' , $yesterday_nine) , array('gt' , $yeseterday_two) , 'AND');
+                $where['sign_time'] = array(array('lt' , $lastTime) , array('gt' , $yeseterday_two));
                 $where['userId'] = $userId;
 
-                $res = $check -> where($where) -> fetchSql(true) -> order('sign_time desc') ->  find();
+                $res = $check -> where($where) -> order('sign_time desc') -> find();
 
-                dump($res);
+                if($res == true){ // 当天是否报名
 
+                    return 2;
+
+                }elseif ($res == false){ // 当天没有报名 ， 确定前天有无报名
+
+                    $check = M('signup');
+                    $where['sign_time'] = array(array('lt' , $lastTime) , array('gt' , $two));
+                    $where['userId'] = $userId;
+
+                    $res = $check -> where($where) -> find();
+
+                    if($res == true){
+                        // dump($res);
+                        $db = M('user');
+
+                        $where['userId'] = $userId;
+
+                        $update = $db -> where($where) -> fetchSql(true) -> save(['status' => 0]);
+
+                        if($update == true){
+                            return true;
+                        }elseif ($update == false){
+                            return 0;
+                        }
+
+                    }elseif($res == false){
+                        return 1;
+                    }
+                }
+
+            }elseif ($check['status'] == 0){// 判断前一天是否报名
+
+                return 2;
             }
         }
     }

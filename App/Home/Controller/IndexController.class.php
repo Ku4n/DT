@@ -243,13 +243,27 @@ class IndexController extends Controller {
 
         print_r($res);
 
-/*        if($res == true){
-            echo 'true';
+        if($res == true){
+            $json['msg'] = '登陆成功！，您今天未报名！';
+            $json['status'] = true;
+            $this -> ajaxReturn($json);
         }elseif ($res == 0){
-            echo 0;
+            $json['msg'] = '登陆成功！，但程序有误';
+            $json['status'] = 0;
+            $this -> ajaxReturn($json);
         }elseif ($res == 1){
-            echo 1;
-        }*/
+            $json['msg'] = '提交信息有误！';
+            $json['status'] = 1;
+            $this -> ajaxReturn($json);
+        }elseif ($res == 2){
+            $json['msg'] = '登陆成功！，您今天已报名！';
+            $json['status'] = 2;
+            $this -> ajaxReturn($json);
+        }elseif ($res == false){
+            $json['msg'] = '不在报名时间段内！';
+            $json['status'] = false;
+            $this -> ajaxReturn($json);
+        }
     }
 
 
