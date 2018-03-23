@@ -18,8 +18,8 @@ class IndexModel extends Model
     {
 
 
-        // $time = date('Y-m-d H:i:s');
-        $time = '2018-3-21 00:57:12';
+        $time = date('Y-m-d H:i:s');
+        // $time = '2018-3-21 00:57:12';
         $now = strtotime($time);
         $startTime = strtotime(date("14:00:00"));
         $endTime = strtotime(date("23:59:59"));

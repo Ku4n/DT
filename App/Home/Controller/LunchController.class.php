@@ -10,8 +10,13 @@ namespace Home\Controller;
 
 use Think\Controller;
 
+header('Access-Control-Allow-Origin:*');
+header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
+header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
+
 class LunchController extends Controller
 {
+
 
     public function index(){
         echo 1;

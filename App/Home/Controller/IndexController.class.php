@@ -3,11 +3,12 @@ namespace Home\Controller;
 use MongoDB\Driver\Server;
 use Think\Controller;
 
-header('content-type:application:json;charset=utf8');
+/*header('content-type:application:json;charset=utf8');
 header('Access-Control-Allow-Origin:*');   // 指定允许其他域名访问
-header('Access-Control-Allow-Headers:x-requested-with,content-type');// 响应头设置
+header('Access-Control-Allow-Headers:x-requested-with,content-type');// 响应头设置*/
 
-class IndexController extends Controller {
+
+class IndexController extends CommonController {
 
     public function index(){
 
@@ -199,10 +200,15 @@ class IndexController extends Controller {
 
     public function get_code(HttpServletRequest $request)
     {
-        if($_GET['code']){
-            $code = $_GET['code'];
-            dump($code);
-        }
+
+        $where['userId'] = '';
+        $where['userName'] = '';
+        $where['avatar'] = '';
+        $where['login_time'] = '';
+
+        $db = M('user');
+
+        $save = where() -> save($where);
     }
 
     public function get_user()
@@ -216,7 +222,7 @@ class IndexController extends Controller {
             $this -> error("获取code失败,请稍后再尝试"  , 'Home/index/index');
         }
         else{
-            $userid = $data['userid'];
+            $userId = $data['userid'];
         }
 
 /*        if($data['errcode'] !== 0){
@@ -227,7 +233,7 @@ class IndexController extends Controller {
 
         dump($user);
         dump($data);
-        dump($userid);
+        dump($userId);
     }
 
 
@@ -241,7 +247,7 @@ class IndexController extends Controller {
         $check = new \Home\Model\IndexModel('user');
         $res = $check -> login($userId);
 
-        print_r($res);
+        // print_r($res);
 
         if($res == true){
             $json['msg'] = '登陆成功！，您今天未报名！';
