@@ -52,20 +52,24 @@ class LunchController extends Controller
 
 
             if ($res == true){
-                // $this -> success('报名成功！' , '../Index/index');
-                echo 'return true';
+                $json['msg'] = '报名成功！';
+                $json['status'] = 'true';
+                $this -> ajaxReturn($json);
             }elseif ($res == 0){
-                // $this -> error('报名成功！,但程序有误', '../Index/index');
-                echo 0;
+                $json['msg'] = '报名成功！,但程序有误';
+                $json['status'] = '0000';
+                $this -> ajaxReturn($json);
             }elseif ($res == 1){
-                // $this -> error('报名失败！', '../Index/index');
-                echo 'false';
+                $json['msg'] = '报名失败！';
+                $json['status'] = '0001';
+                $this -> ajaxReturn($json);
             }elseif ($res == 2){
-                // $this -> error('报名失败！', '../Index/index');
-                echo 'return 2';
+                $json['msg'] = '报名失败！';
+                $json['status'] = '0002';
+                $this -> ajaxReturn($json);
             }
 
-        }elseif ($now < $endTime && $now > $startTime)
+        }elseif ($now < $endTime && $now >= $startTime)
         {
 
 
@@ -73,17 +77,21 @@ class LunchController extends Controller
             $res = $add -> Add($userId , $now , $time);
 
             if ($res == true){
-                // $this -> success('报名成功！' , '../Index/index');
-                echo 'return true';
+                $json['msg'] = '报名成功！';
+                $json['status'] = 'true';
+                $this -> ajaxReturn($json);
             }elseif ($res == 0){
-                // $this -> error('报名成功！,但程序有误', '../Index/index');
-                echo 0;
+                $json['msg'] = '报名成功！,但程序有误';
+                $json['status'] = '0000';
+                $this -> ajaxReturn($json);
             }elseif ($res == 1){
-                // $this -> error('报名失败！', '../Index/index');
-                echo 'false';
+                $json['msg'] = '报名失败！';
+                $json['status'] = '0001';
+                $this -> ajaxReturn($json);
             }elseif ($res == 2){
-                // $this -> error('报名失败！', '../Index/index');
-                echo 'return 2';
+                $json['msg'] = '报名失败！';
+                $json['status'] = '0002';
+                $this -> ajaxReturn($json);
             }
         }
     }
@@ -124,17 +132,21 @@ class LunchController extends Controller
             $res = $del -> Del($userId , $now , $time);
 
             if ($res == true){
-                // $this -> success('报名成功！' , '../Index/index');
-                echo 'return true';
+                $json['msg'] = '报名成功！';
+                $json['status'] = 'true';
+                $this -> ajaxReturn($json);
             }elseif ($res == 0){
-                // $this -> error('报名成功！,但程序有误', '../Index/index');
-                echo 0;
+                $json['msg'] = '报名成功！,但程序有误';
+                $json['status'] = '0000';
+                $this -> ajaxReturn($json);
             }elseif ($res == 1){
-                // $this -> error('报名失败！', '../Index/index');
-                echo 1;
+                $json['msg'] = '报名失败！';
+                $json['status'] = '0001';
+                $this -> ajaxReturn($json);
             }elseif ($res == 2){
-                // $this -> error('报名失败！', '../Index/index');
-                echo  2;
+                $json['msg'] = '报名失败！';
+                $json['status'] = '0002';
+                $this -> ajaxReturn($json);
             }
 
         }elseif ($now >= $zero && $now < $lastTime){
@@ -144,17 +156,21 @@ class LunchController extends Controller
             $res = $del -> Del($userId , $now , $time);
 
             if ($res == true){
-                // $this -> success('报名成功！' , '../Index/index');
-                echo 'return true';
+                $json['msg'] = '报名成功！';
+                $json['status'] = 'true';
+                $this -> ajaxReturn($json);
             }elseif ($res == 0){
-                // $this -> error('报名成功！,但有误', '../Index/index');
-                echo 0;
+                $json['msg'] = '报名成功！,但程序有误';
+                $json['status'] = '0000';
+                $this -> ajaxReturn($json);
             }elseif ($res == 1){
-                // $this -> error('报名失败！', '../Index/index');
-                echo 1;
+                $json['msg'] = '报名失败！';
+                $json['status'] = '0001';
+                $this -> ajaxReturn($json);
             }elseif ($res == 2){
-                // $this -> error('报名失败！', '../Index/index');
-                echo  2;
+                $json['msg'] = '报名失败！';
+                $json['status'] = '0002';
+                $this -> ajaxReturn($json);
             }
 
         }elseif ($now > $lastTime && $now < $startTime){
