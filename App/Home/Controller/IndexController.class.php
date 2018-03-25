@@ -251,23 +251,28 @@ class IndexController extends CommonController {
 
         if($res == true){
             $json['msg'] = '登陆成功！，您今天未报名！';
+            $json['status'] = '0';
             $json['code'] = 'true';
             $this -> ajaxReturn($json);
         }elseif ($res == 0){
             $json['msg'] = '登陆成功！，但程序有误';
+            $json['status'] = '0';
             $json['code'] = '0000';
             $this -> ajaxReturn($json);
         }elseif ($res == 1){
             $json['msg'] = '提交信息有误！';
+            $json['status'] = '';
             $json['code'] = '0001';
             $this -> ajaxReturn($json);
         }elseif ($res == 2){
             $json['msg'] = '登陆成功！，您今天已报名！';
-            $json['code'] = '0002';
+            $json['status'] = '1';
+            $json['code'] = 'true';
             $this -> ajaxReturn($json);
         }elseif ($res == false){
             $json['msg'] = '不在报名时间段内！';
-            $json['code'] = 'false';
+            $json['status'] = '2';
+            $json['code'] = 'true';
             $this -> ajaxReturn($json);
         }
     }

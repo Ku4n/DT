@@ -24,14 +24,10 @@ class LunchController extends Controller
 
     public function SignUp() // 报名接口
     {
-        // 先假设userName 和 userId
 
-        $userId = 'manager2651';
-        $userName = "赵家宽";
+        $userId = I('post.userId');// 获取前端返回的信息
 
-       # $time = date('now');
-        // $time = date('Y-m-d H:i:s');
-        $time = '2018-3-20 10:19:5';
+        $time = date('Y-m-d H:i:s');
         $now = strtotime($time);
         $startTime = strtotime(date("14:00:00"));
         $endTime = strtotime(date("23:59:59"));
@@ -100,11 +96,13 @@ class LunchController extends Controller
     public function UnSignUp()
     {
 
-        $userId = 'manager2651';
-        $userName = "赵家宽";
+        $userId = I('post.userId');// 获取前端返回的信息
+        $userName = I('post.userName');
 
-        # $time = date('now');
-        // $time = date('Y-m-d H:i:s');
+/*        $userId = 'manager2651';
+        $userName = "赵家宽";*/
+
+        $time = date('Y-m-d H:i:s');
         $time = '2018-3-20 10:19:5';
         $now = strtotime($time);
         $startTime = strtotime(date("14:00:00"));
