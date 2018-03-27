@@ -29,14 +29,12 @@ class LunchModel extends Model
 
         if ($add == true) {
             $db = M('user');
-
             $update = $db -> where(array(['userId' => $userId] )) -> save(['status' => 1]);
 
             if ($update == true) {
                 $record = M('log_record');
 
                 $operate = 1;
-
                 $map = array(
                     'userId' => $userId,
                     'operate' => $operate,
@@ -45,7 +43,6 @@ class LunchModel extends Model
                 );
 
                 $log = $record -> add($map);
-
                 if ($log == true) {
                     echo true;
                 } else {
@@ -54,7 +51,6 @@ class LunchModel extends Model
             } else {
                 return 1;
             }
-
         } else {
             return 2;
         }
@@ -66,19 +62,14 @@ class LunchModel extends Model
     {
 
         $db = M('signup');
-
         $del = $db -> where(['userId' => $userId]) -> order('sign_time desc') -> limit(1) -> delete();
 
         if($del == true){
-
             $zero = M('user');
-
             $change = $zero -> where(array(['userId' => $userId])) -> save(['status' => 0]);
-
             if($change == true){
 
                 $db = M('log_record');
-
                 $map = array(
                     'userId' => $userId,
                     'operate' => 0,
@@ -88,8 +79,6 @@ class LunchModel extends Model
 
                 $add = $db -> add($map);
 
-                dump($add == true);
-
                 if($add){
                     return true;
                 }else{
@@ -98,7 +87,6 @@ class LunchModel extends Model
             }else{
                 return 1;
             }
-
         }else{
             return 2;
         }

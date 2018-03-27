@@ -17,16 +17,13 @@ header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
 class LunchController extends Controller
 {
 
-
     public function index(){
         echo 1;
     }
 
     public function SignUp() // 报名接口
     {
-
         $userId = I('post.userId');// 获取前端返回的信息
-
         $time = date('Y-m-d H:i:s');
         $now = strtotime($time);
         $startTime = strtotime(date("14:00:00"));
@@ -34,18 +31,13 @@ class LunchController extends Controller
         $zero = strtotime(date("00:00:00"));
         $lastTime = strtotime(date("10:30:00"));
 
-
         if($now >= $lastTime && $now < $startTime)
         {
-
             $this -> error("还没到报名时间哦~" , "../Home/Index/index");
-
         }elseif ($now < $lastTime && $now >= $zero) // 时间在凌晨0点到早上9点
         {
-
             $add = new \Home\Model\LunchModel('signup');
             $res = $add -> Add($userId , $now , $time);
-
 
             if ($res == true){
                 $json['msg'] = '报名成功！';
@@ -67,7 +59,6 @@ class LunchController extends Controller
 
         }elseif ($now < $endTime && $now >= $startTime)
         {
-
 
             $add = new \Home\Model\LunchModel('signup');
             $res = $add -> Add($userId , $now , $time);

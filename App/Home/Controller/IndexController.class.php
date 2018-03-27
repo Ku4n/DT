@@ -174,11 +174,9 @@ class IndexController extends CommonController {
         $corp = self::get_access_new();
         $page = self::jsApi();
 
-
         $time = $page['time'];
         $nonceStr = $page['noncStr'];
         $signature = $page['signature'];
-
 
         $corpId = $corp['corpid'];
         $agentId = $corp['agentid'];
@@ -213,27 +211,29 @@ class IndexController extends CommonController {
 
     public function get_user()
     {
-        $db = self::get_access_new();
-        $access = $db['access_token'];
-        $user ='https://oapi.dingtalk.com/user/getuserinfo?access_token='.$access.'&code='.'46e09bed5cf63acb8ffc66a54b9a84ec'.'';
-        $data = json_decode(self::curl_get($user) , true);
 
-        if($data['errcode'] !== 0) {
-            $this -> error("获取code失败,请稍后再尝试"  , 'Home/index/index');
-        }
-        else{
-            $userId = $data['userid'];
-        }
+        $userId = I('post.userId');
+        $userName = I('post.userName');
+        $avater = I('post.avater');
 
-/*        if($data['errcode'] !== 0){
-            echo 1;
+        $db = M('user');
+        $user = $db -> where(['userId' => $userId]) -> select();
+
+        if($user['userId'] !== null){
+            $json['msg'] = '登录成功！';
+            $this -> ajaxReturn($json );
+
         }else{
-            echo 2;
-        }*/
+            $map = array(
+                'userId' => $userId,
+                'userName' => $userName,
+                'avater' => $avater
+            );
 
-        dump($user);
-        dump($data);
-        dump($userId);
+            $db -> add($map);
+
+
+        }
     }
 
 
