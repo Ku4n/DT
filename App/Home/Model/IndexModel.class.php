@@ -53,7 +53,7 @@ class IndexModel extends Model
                     if($res == true){
                         $db = M('user');
                         $where['userId'] = $userId;
-                        $update = $db -> where($where) -> fetchSql(true) -> save(['status' => 0]);
+                        $update = $db -> where($where) -> save(['status' => 0]);
 
                         if($update == true){
                             return true;
@@ -88,7 +88,7 @@ class IndexModel extends Model
                     if($res == true){
                         $db = M('user');
                         $where['userId'] = $userId;
-                        $update = $db -> where($where) -> fetchSql(true) -> save(['status' => 0]);
+                        $update = $db -> where($where) -> save(['status' => 0]);
 
                         if($update == true){
                             return true;

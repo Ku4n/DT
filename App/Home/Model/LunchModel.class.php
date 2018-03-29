@@ -34,15 +34,15 @@ class LunchModel extends Model
             if ($update == true) {
                 $record = M('log_record');
 
-                $operate = 1;
                 $map = array(
                     'userId' => $userId,
-                    'operate' => $operate,
+                    'operate' => 1,
                     'update_time' => $now,
                     'time' => $time
                 );
 
                 $log = $record -> add($map);
+
                 if ($log == true) {
                     echo true;
                 } else {

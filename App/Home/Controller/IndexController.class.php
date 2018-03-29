@@ -232,7 +232,6 @@ class IndexController extends CommonController {
 
             $db -> add($map);
 
-
         }
     }
 
