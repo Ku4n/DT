@@ -96,14 +96,13 @@ class LunchController extends Controller
     public function UnSignUp()
     {
 
-        $userId = I('post.userId');// 获取前端返回的信息
-        $userName = I('post.userName');
+/*        $userId = I('post.userId');// 获取前端返回的信息
+        $userName = I('post.userName');*/
 
-/*        $userId = 'manager2651';
-        $userName = "赵家宽";*/
+        $userId = 'manager2651';
+        $userName = "赵家宽";
 
-        $time = date('Y-m-d H:i:s');
-        $time = '2018-3-20 10:19:5';
+        $time = date('2018-3-20 10:19:5');
         $now = strtotime($time);
         $startTime = strtotime(date("14:00:00"));
         $endTime = strtotime(date("23:59:59"));
@@ -115,10 +114,9 @@ class LunchController extends Controller
 
         $db = $check -> where(['userId' => $userId]) -> find();
 
-
         $stauts = (int)$db['status'];
 
-        // dump($stauts);
+        dump($stauts);
 
         if($stauts == 0){
             // $this ->error('请先进行报名操作！', '../Home/Lunch/SignUp');
