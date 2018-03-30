@@ -102,7 +102,7 @@ class LunchController extends Controller
         $userId = 'manager2651';
         $userName = "赵家宽";
 
-        $time = date('2018-3-20 10:19:5');
+        $time = date('2018-3-29 10:19:5');
         $now = strtotime($time);
         $startTime = strtotime(date("14:00:00"));
         $endTime = strtotime(date("23:59:59"));
@@ -115,8 +115,6 @@ class LunchController extends Controller
         $db = $check -> where(['userId' => $userId]) -> find();
 
         $stauts = (int)$db['status'];
-
-        dump($stauts);
 
         if($stauts == 0){
             // $this ->error('请先进行报名操作！', '../Home/Lunch/SignUp');
@@ -177,6 +175,28 @@ class LunchController extends Controller
 
     }
 
+    public function count(){
+
+        $db = M('user');
+        $count = $db -> where(['status' => 1]) -> count();
+
+        return $count;
+    }
+
+
+    public function aa(){
+
+        $userId = "manager2651";
+
+        $db = M('signup');
+        $del = $db -> where(['userId' => $userId]) -> order('sign_time desc') -> limit(1) -> delete();
+
+        if($del == true){
+            dump('true');
+        }else{
+            dump('false');
+        }
+    }
 
 }
 
