@@ -196,31 +196,27 @@ class IndexController extends CommonController {
 
     }
 
-    public function get_code(HttpServletRequest $request)
-    {
-
-        $where['userId'] = '';
-        $where['userName'] = '';
-        $where['avatar'] = '';
-        $where['login_time'] = '';
-
-        $db = M('user');
-
-        $save = where() -> save($where);
-    }
-
     public function get_user()
     {
 
-        $userId = I('post.userId');
+        $userId = I('post.userid');
         $userName = I('post.userName');
         $avater = I('post.avater');
 
         $db = M('user');
-        $user = $db -> where(['userId' => $userId]) -> select();
+        $user = $db -> where(['userId' => $userId]) -> fetchSql(true) -> select();
 
-        if($user['userId'] !== null){
+        $map = array(
+            'userId' => $userId,
+            'userName' => $userName,
+            'avater' => $avater
+        );
+
+        $this -> ajaxReturn($map);
+
+/*        if($user['userId'] !== null){
             $json['msg'] = '登录成功！';
+            $json['code'] = '0000';
             $this -> ajaxReturn($json );
 
         }else{
@@ -231,8 +227,17 @@ class IndexController extends CommonController {
             );
 
             $db -> add($map);
+            if($db == true){
+                $json['msg'] = '登录成功！';
+                $json['code'] = '0000';
+                $this -> ajaxReturn($json );
+            }else{
+                $json['msg'] = '写入信息失败！';
+                $json['code'] = '0001';
+                $this -> ajaxReturn($json );
+            }
 
-        }
+        }*/
     }
 
 
@@ -275,6 +280,7 @@ class IndexController extends CommonController {
             $this -> ajaxReturn($json);
         }
     }
+
 
 
 
