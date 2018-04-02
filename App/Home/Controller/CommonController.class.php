@@ -21,6 +21,12 @@ class CommonController extends Controller
         header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
         header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
 
+        if (empty($_POST)) {
+            $json = json_decode(file_get_contents('php://input'), 1);
+            foreach ($json as $key => $value) {
+                $_POST[$key] = $value;
+            }
+        }
     }
 
 }

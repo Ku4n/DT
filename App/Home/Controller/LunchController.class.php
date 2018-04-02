@@ -102,7 +102,7 @@ class LunchController extends Controller
         $userId = 'manager2651';
         $userName = "赵家宽";
 
-        $time = date('2018-3-29 10:19:5');
+        $time = date('2018-4-2 10:19:5');
         $now = strtotime($time);
         $startTime = strtotime(date("14:00:00"));
         $endTime = strtotime(date("23:59:59"));
@@ -183,20 +183,6 @@ class LunchController extends Controller
         return $count;
     }
 
-
-    public function aa(){
-
-        $userId = "manager2651";
-
-        $db = M('signup');
-        $del = $db -> where(['userId' => $userId]) -> order('sign_time desc') -> limit(1) -> delete();
-
-        if($del == true){
-            dump('true');
-        }else{
-            dump('false');
-        }
-    }
 
 }
 

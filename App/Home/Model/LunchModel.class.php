@@ -62,9 +62,8 @@ class LunchModel extends Model
     {
 
         $db = M('signup');
-        $del = $db -> where(['userId' => $userId]) -> order('sign_time desc') -> limit(1) -> fetchSql(true) -> delete();
+        $del = $db -> where(['userId' => $userId]) -> order('sign_time desc') -> limit(1) -> delete();
 
-        dump($del);
         if($del == true){
             $zero = M('user');
             $change = $zero -> where(array(['userId' => $userId])) -> save(['status' => 0]);

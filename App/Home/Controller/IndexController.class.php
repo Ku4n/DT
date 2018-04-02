@@ -196,25 +196,17 @@ class IndexController extends CommonController {
 
     }
 
-    public function get_user()
+    public function getUser()
     {
-
-        $userId = I('post.userid');
-        $userName = I('post.userName');
-        $avater = I('post.avater');
+        $avatar = I('param.avatar');
+        $userName = I('param.userName');
+        $userId = I('param.userId');
 
         $db = M('user');
-        $user = $db -> where(['userId' => $userId]) -> fetchSql(true) -> select();
+        $user = $db -> where(['userId' => $userId]) -> select();
 
-        $map = array(
-            'userId' => $userId,
-            'userName' => $userName,
-            'avater' => $avater
-        );
 
-        $this -> ajaxReturn($map);
-
-/*        if($user['userId'] !== null){
+        if($user['userName'] !== null){
             $json['msg'] = '登录成功！';
             $json['code'] = '0000';
             $this -> ajaxReturn($json );
@@ -223,13 +215,13 @@ class IndexController extends CommonController {
             $map = array(
                 'userId' => $userId,
                 'userName' => $userName,
-                'avater' => $avater
+                'avatar' => $avatar
             );
 
-            $db -> add($map);
-            if($db == true){
+            $add = $db -> add($map);
+            if($add == true){
                 $json['msg'] = '登录成功！';
-                $json['code'] = '0000';
+                $json['code'] = '000';
                 $this -> ajaxReturn($json );
             }else{
                 $json['msg'] = '写入信息失败！';
@@ -237,7 +229,7 @@ class IndexController extends CommonController {
                 $this -> ajaxReturn($json );
             }
 
-        }*/
+        }
     }
 
 
