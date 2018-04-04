@@ -96,13 +96,9 @@ class LunchController extends Controller
     public function UnSignUp()
     {
 
-/*        $userId = I('post.userId');// 获取前端返回的信息
-        $userName = I('post.userName');*/
+        $userId = I('post.userId');// 获取前端返回的信息
 
-        $userId = 'manager2651';
-        $userName = "赵家宽";
-
-        $time = date('2018-4-2 10:19:5');
+        $time = date('Y-m-d H:i:s');
         $now = strtotime($time);
         $startTime = strtotime(date("14:00:00"));
         $endTime = strtotime(date("23:59:59"));
@@ -177,10 +173,45 @@ class LunchController extends Controller
 
     public function count(){
 
-        $db = M('user');
-        $count = $db -> where(['status' => 1]) -> count();
+        $now = date('Y-m-d H:i:s');
+        // $now = date('2018-04-04 09:23:45');
+        $time = strtotime($now);
+        $startTime = strtotime('14:00:00');
+        $endTime = strtotime('23:59:59');
+        $zero = strtotime('00:00:00');
+        $lastTime = strtotime('10:30:00');
+        $two = $lastTime - (3600*20 + 1800); // 昨天下午两点
+        $one = strtotime('13:00:00');
 
-        return $count;
+        $db = M('signup');
+
+        if($time >= $startTime && $time < $endTime){
+
+            $where['sign_time'] = array(array('lt' , $endTime) , array('egt' , $startTime));
+            $where['status'] = 1;
+
+            $count = $db -> where($where) -> count();
+
+            $this -> ajaxReturn($count);
+
+        }elseif($time >= $zero && $time < $one){
+
+            $where['sign_time'] = array(array('lt' , $lastTime) , array('egt' , $two));
+            $where['status'] = 1;
+
+            $count = $db -> where($where) -> count();
+
+            $this -> ajaxReturn($count);
+
+        }elseif($time >= $one && $time < $startTime){
+
+            $count = '未到报名时间';
+
+            $this -> ajaxReturn($count);
+        }
+
+
+
     }
 
 

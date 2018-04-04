@@ -203,10 +203,10 @@ class IndexController extends CommonController {
         $userId = I('param.userId');
 
         $db = M('user');
-        $user = $db -> where(['userId' => $userId]) -> select();
+        $user = $db -> where(['userId' => $userId]) -> count();
 
 
-        if($user['userName'] !== null){
+        if($user >= 1){
             $json['msg'] = '登录成功！';
             $json['code'] = '0000';
             $this -> ajaxReturn($json );
@@ -235,10 +235,7 @@ class IndexController extends CommonController {
 
     public function login()
     {
-
-        $userId = 'manager2651';
-        $userName = "赵家宽";
-
+        $userId = I('post.userId');
 
         $check = new \Home\Model\IndexModel('user');
         $res = $check -> login($userId);
