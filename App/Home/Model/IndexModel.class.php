@@ -135,7 +135,11 @@ class IndexModel extends Model
                     'login_time' => $time,
                 );
                 $change = $user -> where(['userId' => $userId]) -> save($map);
-                dump('今天已报名');
+                if($change == true){
+                    return true;
+                }else{
+                    return 0;
+                }
             }else{
 
                 $map = array(
@@ -143,7 +147,11 @@ class IndexModel extends Model
                     'status' => 0
                 );
                 $change = $user -> where(['userId' => $userId]) -> save($map);
-                dump('今天未报名！');
+                if($change == true){
+                    return false;
+                }else{
+                    return 0;
+                }
             }
 
         }elseif($now >= $lastTime && $now < $zero){
@@ -157,7 +165,12 @@ class IndexModel extends Model
                     'login_time' => $time,
                 );
                 $change = $user -> where(['userId' => $userId]) -> save($map);
-                dump('今天已报名！');
+                if($change == true){
+                    return true;
+                }else{
+                    return 0;
+                }
+
             }else{
 
                 $map = array(
@@ -165,7 +178,11 @@ class IndexModel extends Model
                     'status' => 0
                 );
                 $change = $user -> where(['userId' => $userId]) -> save($map);
-                dump('今天未报名！');
+                if($change == true){
+                    return false;
+                }else{
+                    return 0;
+                }
             }
         }
 
