@@ -189,7 +189,6 @@ class LunchController extends Controller
 
             $where['sign_time'] = array(array('lt' , $endTime) , array('egt' , $startTime));
             $where['status'] = 1;
-
             $count = $db -> where($where) -> count();
 
             $this -> ajaxReturn($count);
@@ -198,7 +197,6 @@ class LunchController extends Controller
 
             $where['sign_time'] = array(array('lt' , $lastTime) , array('egt' , $two));
             $where['status'] = 1;
-
             $count = $db -> where($where) -> count();
 
             $this -> ajaxReturn($count);

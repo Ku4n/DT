@@ -91,12 +91,11 @@ class IndexController extends CommonController {
         if($corpId !== null || $corpsecret !== null){
             $token_url = 'https://oapi.dingtalk.com/gettoken?corpid='.$ding['corpid'].'&corpsecret='.$ding['corpsecret'];
             $data = json_decode(self::curl_get($token_url) , true);
-            if($data['errmsg'] !== 'ok'){
+            if($data['errcode'] !== '0'){
                 return false;
             }else{
                 $ding['time'] = $data['expires_in'];
                 $ding['access_token'] = $data['access_token'];
-
 
                 # dump($data);
                 return $ding;
@@ -112,7 +111,7 @@ class IndexController extends CommonController {
         $ticket_url = 'https://oapi.dingtalk.com/get_jsapi_ticket?access_token='.$access_token.'';
         $data = json_decode(self::curl_get($ticket_url) , true);
 
-        if($data['errmsg'] !== 'ok'){
+        if($data['errcode'] !== '0'){
             return false;
         }else{
             $ding['ticket'] = $data['ticket'];
@@ -221,7 +220,7 @@ class IndexController extends CommonController {
             $add = $db -> add($map);
             if($add == true){
                 $json['msg'] = '登录成功！';
-                $json['code'] = '000';
+                $json['code'] = '0000';
                 $this -> ajaxReturn($json );
             }else{
                 $json['msg'] = '写入信息失败！';
