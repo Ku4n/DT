@@ -31,9 +31,10 @@ class RegisterController extends Controller{
         if($start_time && $end_time){
             $lunch = $db -> table('signup S') ->
             join('user U on U.userId = S.userId') ->
-            field('U.userName , S.time') -> where($map) -> group('id') -> select();
+            field('U.userName , S.time') -> where($map) -> group('S.id') -> select();
 
-            $this -> ajaxReturn($lunch);//需要用一个数组把返回的数装起来
+            dump($lunch);//需要用一个数组把返回的数装起来
+
         }else{
             return false;
         }
@@ -48,8 +49,9 @@ class RegisterController extends Controller{
 
         $person = $db ->  table('signup S') ->
         join('user U on U.userId = S.userId') ->
-        field('U.userName , S.time') -> where(['S.userId' => $userId]) -> group('id desc') -> fetchSql() -> select();
+        field('U.userName , S.time') -> where(['S.userId' => $userId]) -> group('S.id desc') -> select();
 
+        dump($person);
     }
 
     public function add(){
