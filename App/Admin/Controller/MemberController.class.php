@@ -21,8 +21,31 @@ class MemberController extends Controller{
 
         $db = M('user');
         $show = $db -> field('userId , userName , avatar') -> group('id') -> select();
-        $this -> ajaxReturn($show);
 
+        if(isset($_GET['p'])){
+            $p = I('get.p');
+        }else{
+            $p = 0;
+        }
+        $b = 10;//每页请求数
+        $userName = I('param.userName');
+        if($userName){
+            $map['U.userName'] = array('like', '%' . $userName . '%');
+        }
+        $count = $db -> where($map) -> count();
+
+        if($p>0){
+            $list = $db -> field('id , userName , avatar') ->
+            where($map) -> page($p,$b) -> select();
+        }else{
+            $list = $db -> field('id , userName , avatar') ->
+            where($map) -> select();
+        }
+
+        $json['list'] = $list;
+        $json['count'] = $count;
+        $json['detail'] = '个人';
+        $this -> ajaxReturn($json);
     }
 
 
@@ -30,14 +53,42 @@ class MemberController extends Controller{
 
         $db = M('signup');
         $userId = I('param.userId');
-        $userId = 'manager2651';
+        $userId = 'manager2652';
         $show = $db -> table('signup S') ->
         join('user U on U.userId = S.userId') ->
-        where(['S.userId' => $userId]) -> field('S.id , userName , avatar , time') -> group('S.id desc') -> select();
-        dump($show);
-        foreach($show as $key => $val){#还要遍历、分页
+        where(['S.userId' => $userId]) -> field('S.id , userName , avatar , time') -> where(['del' => false]) -> group('S.id desc') -> select();
 
+        if(isset($_GET['p'])){
+            $p = I('get.p');
+        }else{
+            $p = 0;
         }
+        $b = 10;//每页请求数
+        $db = M('signup');
+        $userName = I('param.userName');
+        if($userName){
+            $map['U.userName'] = array('like', '%' . $userName . '%');
+        }
+        $count = $db ->table('signup S') ->
+        join('user U on U.userId = S.userId') -> where($map) -> count();
+
+        if($p>0){
+            $list = $db -> table('signup S') ->
+            join('user U on U.userId = S.userId') ->
+            field('S.id , U.userName , U.avatar , S.time') ->
+            where($map) -> page($p,$b) -> select();
+        }else{
+            $list = $db -> table('signup S') ->
+            join('user U on U.userId = S.userId') ->
+            field('S.id , U.userName , U.avatar , S.time') ->
+            where($map) -> select();
+        }
+
+        $json['list'] = $list;
+        $json['count'] = $count;
+        $json['detail'] = '历史';
+        $this -> ajaxReturn($json);
+
     }
 
 
@@ -57,7 +108,7 @@ class MemberController extends Controller{
             $map = array(
                 'userId' => $userId,//这里要改成登录的用户（先保留一下
                 'operate' => 4,
-                'signId' =>$signId,
+                'signId' => $signId,
                 'update_time' => $now,
                 'time' => $time,
             );
@@ -66,7 +117,17 @@ class MemberController extends Controller{
             if($markdown == true){
                 $datebase = M('signup');
                 $change = $datebase -> table('signup') -> where(['id' => $userId])-> save(['del' => true]);
-                $this -> ajaxReturn(true);
+                if($change == true){
+                    $db = M('user');
+                    $zero = $db -> where(['userId' => $userId]) -> save(['status' => 0]);
+                    if($zero == true){
+                        $this -> ajaxReturn(true);
+                    }else{
+                        return false;
+                    }
+                }else{
+                    return false;
+                }
             }else{
                 return false;
             }
@@ -80,7 +141,8 @@ class MemberController extends Controller{
     public function xx(){
 
         $db = M('signup');
-        $change = $db -> where(['id' => 3])-> fetchSql() -> save(['del' => false]);
-        dump($change);
+        $userId = 'manager2652';
+        $where = $db -> where(['userId' => $userId]) -> group('id desc') -> limit('1') -> find();
+        dump($where['id']);
     }
 }

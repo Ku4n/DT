@@ -87,7 +87,7 @@ class IndexController extends Controller{
             return false;
         }else{
             $ding['access_token'] = $data['access_token'];
-            $ding['code'] = $data['errcode'];
+            $ding['corpId'] = $corpid;
 
             return $ding;
         }

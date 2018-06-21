@@ -14,47 +14,50 @@ use Think\Model;
 class LunchModel extends Model
 {
 
-    public function Add($userId, $now, $time)// userId 报名人ID , now 当前时间戳 , time date格式时间
-    {
 
-        $map = M('signup');
-
+    public function Add($userId, $now, $time){// userId 报名人ID , now 当前时间戳 , time date格式时间
+        $db =M('signup');
         $data = array(
             'userId' => $userId,
             'sign_time' => $now,
             'time' => $time,
         );
 
-        $add = $map -> add($data);
+        $add = $db -> add($data);
 
-        if ($add == true) {
+        if($add == true){
+
             $db = M('user');
-            $update = $db -> where(array(['userId' => $userId] )) -> save(['status' => 1]);
+            $update = $db -> where(['userId' => $userId]) -> save(['status' => 1]);
 
-            if ($update == true) {
-                $record = M('log_record');
 
+            if($update == true){
+
+                $db = M('signup');
+                $where = $db -> where(['userId' => $userId]) -> group('id desc') -> limit('1') -> find();
+                $signId = $where['id'];
                 $map = array(
                     'userId' => $userId,
                     'operate' => 1,
+                    'signId' => $signId,
                     'update_time' => $now,
                     'time' => $time
                 );
 
-                $log = $record -> add($map);
+                $db = M('log_record');
+                $log = $db -> table('log_record') -> add($map);
 
-                if ($log == true) {
-                    echo true;
-                } else {
+                if($log == true){
+                    return true;
+                }else{
                     return 0;
                 }
-            } else {
-                return 1;
+            }else{
+                return false;
             }
-        } else {
-            return 2;
+        }else{
+            return false;
         }
-
     }
 
 
@@ -62,17 +65,21 @@ class LunchModel extends Model
     {
 
         $db = M('signup');
-        $del = $db -> where(['userId' => $userId]) -> order('sign_time desc') -> limit(1) -> delete();
+        $del = $db -> where(['userId' => $userId]) -> order('sign_time desc') -> limit(1) -> save(['del' => true]);
 
         if($del == true){
             $zero = M('user');
             $change = $zero -> where(array(['userId' => $userId])) -> save(['status' => 0]);
             if($change == true){
 
+                $db = M('signup');
+                $where = $db -> where(['userId' => $userId]) -> group('id desc') -> limit('1') -> find();
+                $signId = $where['id'];
                 $db = M('log_record');
                 $map = array(
                     'userId' => $userId,
                     'operate' => 0,
+                    'signId' => $signId,
                     'update_time' => $now,
                     'time' => $time,
                 );
@@ -85,14 +92,13 @@ class LunchModel extends Model
                     return 0;
                 }
             }else{
-                return 1;
+                return false;
             }
         }else{
-            return 2;
+            return false;
         }
 
     }
-
 }
 
 ?>

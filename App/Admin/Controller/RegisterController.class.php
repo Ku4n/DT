@@ -20,10 +20,10 @@ class RegisterController extends Controller{
         echo 123;
     }
 
-    public function all_sign(){
+    public function all_sign(){//显示当天
 
         $db = M('signup');
-        $start_time = strtotime(I('param.start_time'));//前端返回時間後，再篩選
+        $start_time = strtotime(I('param.start_time'));
         $end_time = strtotime(I('param.end_time'));
 
         $map['sign_time'] = array(array('EGT' , "$start_time") , array('LT' , "$end_time"));
@@ -33,7 +33,7 @@ class RegisterController extends Controller{
             join('user U on U.userId = S.userId') ->
             field('U.userName , S.time') -> where($map) -> group('S.id') -> select();
 
-            dump($lunch);//需要用一个数组把返回的数装起来
+            $this -> ajaxReturn($lunch);
 
         }else{
             return false;
@@ -45,7 +45,7 @@ class RegisterController extends Controller{
 
         $db = M('signup');
         $userId = I('param.userId');
-        $userId = 'manager2651';
+        #$userId = 'manager2651';
 
         $person = $db ->  table('signup S') ->
         join('user U on U.userId = S.userId') ->
@@ -60,10 +60,5 @@ class RegisterController extends Controller{
 
     }
 
-    public function del(){
-
-        $db = M('signup');
-
-    }
 
 }

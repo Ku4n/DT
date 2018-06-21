@@ -27,7 +27,7 @@ class LunchController extends Controller
 
         $userId = 'manager2651';
         // $time = date('Y-m-d H:i:s');
-        $time = date("2018-03-29 09:30:00");
+        $time = date("2018-06-21 14:30:00");
         $now = strtotime($time);
         $startTime = strtotime(date("14:00:00"));
         $endTime = strtotime(date("23:59:59"));
@@ -50,16 +50,12 @@ class LunchController extends Controller
                     $json['status'] = 'true';
                     $this -> ajaxReturn($json);
                 }elseif ($res == 0){
-                    $json['msg'] = '报名成功！,但程序有误';
+                    $json['msg'] = '报名失败!,但记录失败';
                     $json['status'] = '0000';
                     $this -> ajaxReturn($json);
-                }elseif ($res == 1){
+                }elseif ($res == false){
                     $json['msg'] = '报名失败！';
-                    $json['status'] = '0001';
-                    $this -> ajaxReturn($json);
-                }elseif ($res == 2){
-                    $json['msg'] = '报名失败！';
-                    $json['status'] = '0002';
+                    $json['status'] = 'false';
                     $this -> ajaxReturn($json);
                 }
 
@@ -74,16 +70,12 @@ class LunchController extends Controller
                     $json['status'] = 'true';
                     $this -> ajaxReturn($json);
                 }elseif ($res == 0){
-                    $json['msg'] = '报名成功！,但程序有误';
+                    $json['msg'] = '报名失败!,但记录失败';
                     $json['status'] = '0000';
                     $this -> ajaxReturn($json);
-                }elseif ($res == 1){
+                }elseif ($res == false){
                     $json['msg'] = '报名失败！';
-                    $json['status'] = '0001';
-                    $this -> ajaxReturn($json);
-                }elseif ($res == 2){
-                    $json['msg'] = '报名失败！';
-                    $json['status'] = '0002';
+                    $json['status'] = 'false';
                     $this -> ajaxReturn($json);
                 }
             }
@@ -97,6 +89,7 @@ class LunchController extends Controller
     {
 
         $userId = I('post.userId');// 获取前端返回的信息
+        $userId = 'manager2651';
 
         $time = date('Y-m-d H:i:s');
         $now = strtotime($time);
@@ -122,20 +115,16 @@ class LunchController extends Controller
             $res = $del -> Del($userId , $now , $time);
 
             if ($res == true){
-                $json['msg'] = '报名成功！';
+                $json['msg'] = '取消成功！';
                 $json['status'] = 'true';
                 $this -> ajaxReturn($json);
             }elseif ($res == 0){
-                $json['msg'] = '报名成功！,但程序有误';
+                $json['msg'] = '取消成功！,但程序有误';
                 $json['status'] = '0000';
                 $this -> ajaxReturn($json);
-            }elseif ($res == 1){
-                $json['msg'] = '报名失败！';
-                $json['status'] = '0001';
-                $this -> ajaxReturn($json);
-            }elseif ($res == 2){
-                $json['msg'] = '报名失败！';
-                $json['status'] = '0002';
+            }elseif ($res == false){
+                $json['msg'] = '取消失败！';
+                $json['status'] = 'false';
                 $this -> ajaxReturn($json);
             }
 
@@ -146,20 +135,16 @@ class LunchController extends Controller
             $res = $del -> Del($userId , $now , $time);
 
             if ($res == true){
-                $json['msg'] = '报名成功！';
+                $json['msg'] = '取消成功！';
                 $json['status'] = 'true';
                 $this -> ajaxReturn($json);
             }elseif ($res == 0){
-                $json['msg'] = '报名成功！,但程序有误';
+                $json['msg'] = '取消成功！,但程序有误';
                 $json['status'] = '0000';
                 $this -> ajaxReturn($json);
-            }elseif ($res == 1){
-                $json['msg'] = '报名失败！';
-                $json['status'] = '0001';
-                $this -> ajaxReturn($json);
-            }elseif ($res == 2){
-                $json['msg'] = '报名失败！';
-                $json['status'] = '0002';
+            }elseif ($res == false){
+                $json['msg'] = '取消失败！';
+                $json['status'] = 'false';
                 $this -> ajaxReturn($json);
             }
 
