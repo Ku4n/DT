@@ -17,6 +17,7 @@ class MemberController extends Controller{
         echo 123;
     }
 
+    #全部成员
     public function member(){
 
         $db = M('user');
@@ -49,6 +50,7 @@ class MemberController extends Controller{
     }
 
 
+    #个人历史
     public function history(){
 
         $db = M('signup');
@@ -92,7 +94,8 @@ class MemberController extends Controller{
     }
 
 
-    public function del(){
+    #个人页，删除历史记录
+    public function Del(){
 
         $db = M('log_record');
         $signId = I('param.id');
@@ -114,18 +117,13 @@ class MemberController extends Controller{
             );
 
             $markdown = $db -> table('log_record') -> add($map);
-            if($markdown == true){
+            if($markdown == true) {
                 $datebase = M('signup');
-                $change = $datebase -> table('signup') -> where(['id' => $userId])-> save(['del' => true]);
+                $change = $datebase->table('signup')->where(['id' => $userId])->save(['del' => true]);
                 if($change == true){
-                    $db = M('user');
-                    $zero = $db -> where(['userId' => $userId]) -> save(['status' => 0]);
-                    if($zero == true){
-                        $this -> ajaxReturn(true);
-                    }else{
-                        return false;
-                    }
-                }else{
+
+                $this->ajaxReturn(true);
+            }else{
                     return false;
                 }
             }else{
@@ -138,11 +136,30 @@ class MemberController extends Controller{
     }
 
 
-    public function xx(){
+    #应急添加
+    public function Add(){
 
         $db = M('signup');
-        $userId = 'manager2652';
-        $where = $db -> where(['userId' => $userId]) -> group('id desc') -> limit('1') -> find();
-        dump($where['id']);
+        $userId = I('param.userId');
+        $sign_time = I('param.time');//前端返回选择日期(时间戳格式)，添加当天的报名次数
+        $time = date('Y-m-d 09:00:00' , $sign_time);
+
+        $where = array(
+            'userId' => $userId,
+            'sign_time' => $sign_time,
+            'time' => $time,
+        );
+
+        $add = $db -> add($where);
+
+    }
+
+
+    public function xx(){
+
+        $time = '1529575847';
+        $time2 = date('Y-m-d H:i:s' , $time);
+
+        dump($time2);
     }
 }
