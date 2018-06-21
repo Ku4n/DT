@@ -142,15 +142,36 @@ class MemberController extends Controller{
         $db = M('signup');
         $userId = I('param.userId');
         $sign_time = I('param.time');//前端返回选择日期(时间戳格式)，添加当天的报名次数
-        $time = date('Y-m-d 09:00:00' , $sign_time);
+        $end_time = strtotime(date('Y-m-d 10:30:00'));
+        $start_time = strtotime(date('Y-m-d 14:00:00'));
+        $last_time = strtotime(date('Y-m-d 23:59:59'));
+        $zero = strtotime(date('Y-m-d 00:00:00'));
 
-        $where = array(
-            'userId' => $userId,
-            'sign_time' => $sign_time,
-            'time' => $time,
-        );
+        if($end_time > $sign_time && $sign_time >= $zero){
+            $time = date('Y-m-d 10:00:00');
 
-        $add = $db -> add($where);
+            $where = array(
+                'userId' => $userId,
+                'sign_time' => $sign_time,
+                'time' => $time,
+            );
+
+            $add = $db -> add($where);
+
+            dump($add);
+        }elseif($last_time > $sign_time && $sign_time >= $start_time){
+            $time = date('Y-m-d 15:00:00');
+
+            $where = array(
+                'userId' => $userId,
+                'sign_time' => $sign_time,
+                'time' => $time,
+            );
+
+            $add = $db -> add($where);
+        }
+
+
 
     }
 
