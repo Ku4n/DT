@@ -89,7 +89,7 @@ class IndexController extends Controller{
             $ding['access_token'] = $data['access_token'];
             $ding['corpId'] = $corpid;
 
-            return $ding;
+            $this -> ajaxReturn($ding , 'json');
         }
 
     }

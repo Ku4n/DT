@@ -206,8 +206,8 @@ class IndexController extends CommonController {
 
 
         if($user >= 1){
-            $json['msg'] = '登录成功！';
-            $json['code'] = '0000';
+            $json['detail'] = '登录成功！';
+            $json['code'] = 'success';
             $this -> ajaxReturn($json );
 
         }else{
@@ -219,12 +219,12 @@ class IndexController extends CommonController {
 
             $add = $db -> add($map);
             if($add == true){
-                $json['msg'] = '登录成功！';
-                $json['code'] = '0000';
+                $json['detail'] = '登录成功！';
+                $json['code'] = 'success';
                 $this -> ajaxReturn($json );
             }else{
-                $json['msg'] = '写入信息失败！';
-                $json['code'] = '0001';
+                $json['detail'] = '写入信息失败！';
+                $json['code'] = 'false';
                 $this -> ajaxReturn($json );
             }
 
@@ -242,19 +242,16 @@ class IndexController extends CommonController {
         // print_r($res);
 
         if($res == true){
-            $json['msg'] = '登陆成功！，您今天已报名！';
-            $json['status'] = '0';
-            $json['code'] = 'true';
+            $json['detail'] = '登陆成功！，您今天已报名！';
+            $json['code'] = 'success';
             $this -> ajaxReturn($json);
         }elseif ($res == false){
-            $json['msg'] = '登陆成功！，您今天未报名！';
-            $json['status'] = '0';
-            $json['code'] = '0000';
+            $json['detail'] = '登陆成功！，您今天未报名！';
+            $json['code'] = 'success';
             $this -> ajaxReturn($json);
         }elseif($res == 0){
-            $json['msg'] = '登陆成功！，但程序有误';
-            $json['status'] = '0';
-            $json['code'] = '0000';
+            $json['detail'] = '登陆成功！，但程序有误';
+            $json['code'] = 'false';
             $this -> ajaxReturn($json);
         }
     }
