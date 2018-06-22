@@ -1,0 +1,562 @@
+[ 2018-06-13T09:46:11+08:00 ] ::1 /DT/Admin/Index/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012752s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016886s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016938s ]
+ERR: ÈùûÊ≥ïÊìç‰Ωú:index.php
+
+[ 2018-06-13T09:46:13+08:00 ] ::1 /DT/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.011744s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011791s ]
+
+[ 2018-06-13T10:18:01+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001787s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001842s ]
+ERR: SQLSTATE[HY000] [2002] ”…”⁄¡¨Ω”∑Ω‘⁄“ª∂Œ ±º‰∫Û√ª”–’˝»∑¥∏¥ªÚ¡¨Ω”µƒ÷˜ª˙√ª”–∑¥”¶£¨¡¨Ω”≥¢ ‘ ß∞‹°£
+
+
+[ 2018-06-13T10:19:22+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001247s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0279s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 33 Ë°å.
+NOTIC: [1024] SSL certificate problem: unable to get local issuer certificate C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 40 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.034647s ]
+INFO: [ app_end ] --END-- [ RunTime:0.034790s ]
+
+[ 2018-06-13T10:19:48+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001006s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0193s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 33 Ë°å.
+NOTIC: [1024] SSL certificate problem: unable to get local issuer certificate C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 40 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003096s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003206s ]
+
+[ 2018-06-13T10:20:00+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0210s ]
+SQL: SELECT `corpid` FROM `dt_appid`  [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 33 Ë°å.
+NOTIC: [1024] SSL certificate problem: unable to get local issuer certificate C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 40 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000775s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000824s ]
+
+[ 2018-06-13T10:26:54+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0236s ]
+SQL: SELECT `corpid` FROM `dt_appid`  [ RunTime:0.0004s ]
+SQL: SELECT `ssosecret` FROM `dt_appid`  [ RunTime:0.0001s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 33 Ë°å.
+NOTIC: [1024] SSL certificate problem: unable to get local issuer certificate C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 40 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000881s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000929s ]
+
+[ 2018-06-13T10:37:57+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.017108s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.017210s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0240s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 33 Ë°å.
+NOTIC: [1024] SSL certificate problem: unable to get local issuer certificate C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 40 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006795s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006913s ]
+
+[ 2018-06-13T10:38:45+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0235s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000726s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000763s ]
+
+[ 2018-06-13T10:38:54+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001315s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0286s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000736s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000772s ]
+
+[ 2018-06-13T10:39:38+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000636s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0208s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 33 Ë°å.
+NOTIC: [1024] SSL certificate problem: unable to get local issuer certificate C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 40 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000703s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
+
+[ 2018-06-13T10:39:45+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0546s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 33 Ë°å.
+NOTIC: [1024] SSL certificate problem: unable to get local issuer certificate C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 40 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001367s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001422s ]
+
+[ 2018-06-13T10:40:16+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0711s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 59 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002229s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002587s ]
+
+[ 2018-06-13T10:43:29+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016063s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016117s ]
+
+[ 2018-06-13T10:43:42+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001345s ]
+
+[ 2018-06-13T10:43:49+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000832s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000896s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0332s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 59 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.035413s ]
+INFO: [ app_end ] --END-- [ RunTime:0.035553s ]
+
+[ 2018-06-13T10:44:02+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000859s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0422s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 59 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002783s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002936s ]
+
+[ 2018-06-13T10:44:12+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000794s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0379s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 59 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000756s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000813s ]
+
+[ 2018-06-13T10:44:31+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001055s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0455s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 59 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002919s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003095s ]
+
+[ 2018-06-13T10:45:52+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000898s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0953s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 59 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001201s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001274s ]
+
+[ 2018-06-13T10:47:12+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0442s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 59 Ë°å.
+
+[ 2018-06-13T10:49:04+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000725s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0506s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+
+[ 2018-06-13T10:49:05+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000921s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0405s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+
+[ 2018-06-13T10:49:05+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000973s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001045s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0278s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+
+[ 2018-06-13T10:49:21+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000930s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0431s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+
+[ 2018-06-13T10:49:39+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000780s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0459s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+
+[ 2018-06-13T10:49:49+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000986s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0361s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+
+[ 2018-06-13T11:10:49+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016948s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0272s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+NOTIC: [8] Undefined index: acceess_token C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 88 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.032581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.032680s ]
+
+[ 2018-06-13T11:12:27+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000992s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001071s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.1160s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+NOTIC: [8] Undefined index: sso_token C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 88 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000816s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000866s ]
+
+[ 2018-06-13T11:12:42+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002447s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0714s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+NOTIC: [8] Undefined index: sso_token C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 89 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004654s ]
+
+[ 2018-06-13T11:16:09+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0244s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002386s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002539s ]
+
+[ 2018-06-13T11:16:21+08:00 ] ::1 /DT/Admin/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001569s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0223s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002208s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002353s ]
+
+[ 2018-06-13T11:26:20+08:00 ] ::1 /DT/Admin/Index/get-code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+ERR: ÈùûÊ≥ïÊìç‰Ωú:get-code
+
+[ 2018-06-13T11:26:25+08:00 ] ::1 /DT/Admin/Index/get_code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0225s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001584s ]
+
+[ 2018-06-13T11:27:02+08:00 ] ::1 /DT/Admin/Index/get_code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000739s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0218s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002720s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002878s ]
+
+[ 2018-06-13T11:27:04+08:00 ] ::1 /DT/Admin/Index/get_code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0234s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001267s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001350s ]
+
+[ 2018-06-13T11:27:35+08:00 ] ::1 /DT/Admin/Index/get_code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0267s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002462s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002592s ]
+
+[ 2018-06-13T11:28:15+08:00 ] ::1 /DT/Admin/Index/get_code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000984s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0206s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002240s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002399s ]
+
+[ 2018-06-13T11:28:21+08:00 ] ::1 /DT/Admin/Index/get_code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000936s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0238s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000992s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001089s ]
+
+[ 2018-06-13T12:36:58+08:00 ] ::1 /DT/Admin/Index/get_code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002665s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016265s ]
+ERR: SQLSTATE[HY000] [2002] ”…”⁄¡¨Ω”∑Ω‘⁄“ª∂Œ ±º‰∫Û√ª”–’˝»∑¥∏¥ªÚ¡¨Ω”µƒ÷˜ª˙√ª”–∑¥”¶£¨¡¨Ω”≥¢ ‘ ß∞‹°£
+
+
+[ 2018-06-13T12:37:20+08:00 ] ::1 /DT/Admin/Index/get_code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0444s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002939s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003032s ]
+
+[ 2018-06-13T16:33:32+08:00 ] ::1 /DT/Admin/Index/get_code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016755s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.064621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.064688s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.1222s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015967s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016035s ]
+
+[ 2018-06-13T16:56:49+08:00 ] ::1 /DT/Admin/Index/get_code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002434s ]
+SQL: SHOW COLUMNS FROM `dt_appid` [ RunTime:0.0322s ]
+SQL: SELECT * FROM `dt_appid` LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\PHPstudy\WWW\DT\App\Admin\Controller\IndexController.class.php Á¨¨ 58 Ë°å.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010729s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010909s ]
+
