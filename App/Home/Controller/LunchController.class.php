@@ -46,16 +46,16 @@ class LunchController extends Controller
                 $res = $add -> Add($userId , $now , $time);
 
                 if ($res == true){
-                    $json['msg'] = '报名成功！';
-                    $json['status'] = 'true';
+                    $json['detail'] = '报名成功！';
+                    $json['code'] = 'success';
                     $this -> ajaxReturn($json);
                 }elseif ($res == 0){
-                    $json['msg'] = '报名失败!,但记录失败';
-                    $json['status'] = '0000';
+                    $json['detail'] = '报名失败!,但记录失败';
+                    $json['code'] = '0000';
                     $this -> ajaxReturn($json);
                 }elseif ($res == false){
-                    $json['msg'] = '报名失败！';
-                    $json['status'] = 'false';
+                    $json['detail'] = '报名失败！';
+                    $json['code'] = 'false';
                     $this -> ajaxReturn($json);
                 }
 
@@ -66,16 +66,16 @@ class LunchController extends Controller
                 $res = $add -> Add($userId , $now , $time);
 
                 if ($res == true){
-                    $json['msg'] = '报名成功！';
-                    $json['status'] = 'true';
+                    $json['detail'] = '报名成功！';
+                    $json['code'] = 'success';
                     $this -> ajaxReturn($json);
                 }elseif ($res == 0){
-                    $json['msg'] = '报名失败!,但记录失败';
-                    $json['status'] = '0000';
+                    $json['detail'] = '报名失败!,但记录失败';
+                    $json['code'] = '0000';
                     $this -> ajaxReturn($json);
                 }elseif ($res == false){
-                    $json['msg'] = '报名失败！';
-                    $json['status'] = 'false';
+                    $json['detail'] = '报名失败！';
+                    $json['code'] = 'false';
                     $this -> ajaxReturn($json);
                 }
             }
@@ -115,16 +115,16 @@ class LunchController extends Controller
             $res = $del -> Del($userId , $now , $time);
 
             if ($res == true){
-                $json['msg'] = '取消成功！';
-                $json['status'] = 'true';
+                $json['detail'] = '取消成功！';
+                $json['code'] = 'success';
                 $this -> ajaxReturn($json);
             }elseif ($res == 0){
-                $json['msg'] = '取消成功！,但程序有误';
-                $json['status'] = '0000';
+                $json['detail'] = '取消成功！,但程序有误';
+                $json['code'] = '0000';
                 $this -> ajaxReturn($json);
             }elseif ($res == false){
-                $json['msg'] = '取消失败！';
-                $json['status'] = 'false';
+                $json['detail'] = '取消失败！';
+                $json['code'] = 'false';
                 $this -> ajaxReturn($json);
             }
 
@@ -135,16 +135,16 @@ class LunchController extends Controller
             $res = $del -> Del($userId , $now , $time);
 
             if ($res == true){
-                $json['msg'] = '取消成功！';
-                $json['status'] = 'true';
+                $json['detail'] = '取消成功！';
+                $json['code'] = 'success';
                 $this -> ajaxReturn($json);
             }elseif ($res == 0){
-                $json['msg'] = '取消成功！,但程序有误';
-                $json['status'] = '0000';
+                $json['detail'] = '取消成功！,但程序有误';
+                $json['code'] = '0000';
                 $this -> ajaxReturn($json);
             }elseif ($res == false){
-                $json['msg'] = '取消失败！';
-                $json['status'] = 'false';
+                $json['detail'] = '取消失败！';
+                $json['code'] = 'false';
                 $this -> ajaxReturn($json);
             }
 

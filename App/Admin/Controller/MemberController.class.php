@@ -100,9 +100,10 @@ class MemberController extends Controller{
         $db = M('log_record');
         $signId = I('param.id');
         $userId = I('param.userId');
-
+        $operater = I('param.operater');
         #$signId = 3;
         #$userId = 'manager2651';
+        #$operater = 'manager2655';
 
         if ($signId && $userId){
 
@@ -114,73 +115,141 @@ class MemberController extends Controller{
                 'signId' => $signId,
                 'update_time' => $now,
                 'time' => $time,
+                'operater' => $operater
             );
 
             $markdown = $db -> table('log_record') -> add($map);
             if($markdown == true) {
                 $datebase = M('signup');
-                $change = $datebase->table('signup')->where(['id' => $userId])->save(['del' => true]);
+                $change = $datebase -> table('signup') -> where(['id' => $signId]) -> save(['del' => true]);
                 if($change == true){
-
-                $this->ajaxReturn(true);
+                    $json['detail'] = '删除成功！';
+                    $json['code'] = 'success';
+                    $this->ajaxReturn($json);
             }else{
-                    return false;
+                    $json['detail'] = '删除失败，请联系管理员！';
+                    $json['code'] = 'fail';
+                    $this->ajaxReturn($json);
                 }
             }else{
-                return false;
+                $json['detail'] = '删除失败！';
+                $json['code'] = 'fail';
+                $this->ajaxReturn($json);
             }
 
         }else{
-            return false;//找不到删除的id及userId
+            $json['detail'] = '参数不足！';
+            $json['code'] = 'fail';
+            $this->ajaxReturn($json);
         }
     }
 
 
     #应急添加
     public function Add(){
-
         $db = M('signup');
-        $userId = I('param.userId');
-        $sign_time = I('param.time');//前端返回选择日期(时间戳格式)，添加当天的报名次数
-        $end_time = strtotime(date('Y-m-d 10:30:00'));
-        $start_time = strtotime(date('Y-m-d 14:00:00'));
-        $last_time = strtotime(date('Y-m-d 23:59:59'));
-        $zero = strtotime(date('Y-m-d 00:00:00'));
+        #$userId = I('param.userId');
+        #$sign_time = I('param.time');//前端返回选择日期(时间戳格式)，添加当天的报名次数
+        #$operater = I('param.operater');
+        $userId = 'manager2651';
+        $sign_time = '1529632831';
+        $time = date('Y-m-d H:i:s' , $sign_time);
+        $operater = 'manager2655';
 
-        if($end_time > $sign_time && $sign_time >= $zero){
-            $time = date('Y-m-d 10:00:00');
+        $map = array(
+            'userId' => $userId,
+            'sign_time' => $sign_time,
+            'time' => $time,
+            'supply' => true
+        );
 
-            $where = array(
+        $add = $db -> add($map);
+
+        if($add == true){
+
+            $where = $db -> where(['userId' => $userId]) -> group('id desc') -> find();
+            $signId = $where['id'];
+
+            $db = M('log_record');
+            $map = array(
                 'userId' => $userId,
-                'sign_time' => $sign_time,
+                'operate' => 3,
+                'signId' => $signId,
                 'time' => $time,
+                'update_time' => $sign_time,
+                'operater' => $operater
             );
 
-            $add = $db -> add($where);
+            $add = $db -> add($map);
 
-            dump($add);
-        }elseif($last_time > $sign_time && $sign_time >= $start_time){
-            $time = date('Y-m-d 15:00:00');
-
-            $where = array(
-                'userId' => $userId,
-                'sign_time' => $sign_time,
-                'time' => $time,
-            );
-
-            $add = $db -> add($where);
+            if($add == true){
+                $json['detail'] = '添加成功';
+                $json['code'] = 'success';
+                $this -> ajaxReturn($json);
+            }else{
+                $json['detail'] = '添加失败，请联系管理员';
+                $json['code'] = 'fail';
+                $this -> ajaxReturn($json);
+            }
+        }else{
+            $json['detail'] = '添加失败';
+            $json['code'] = 'fail';
+            $this -> ajaxReturn($json);
         }
-
-
 
     }
 
 
     public function xx(){
 
-        $time = '1529575847';
-        $time2 = date('Y-m-d H:i:s' , $time);
+        $db = M('signup');
+        #$userId = I('param.userId');
+        #$sign_time = I('param.time');//前端返回选择日期(时间戳格式)，添加当天的报名次数
+        #$operater = I('param.operater');
+        $userId = 'manager2651';
+        $sign_time = '1529632831';
+        $time = date('Y-m-d H:i:s' , $sign_time);
+        $operater = 'manager2655';
 
-        dump($time2);
+        $map = array(
+            'userId' => $userId,
+            'sign_time' => $sign_time,
+            'time' => $time,
+            'supply' => true
+        );
+
+        $add = $db -> add($map);
+
+        if($add == true){
+
+            $where = $db -> where(['userId' => $userId]) -> group('id desc') -> find();
+            $signId = $where['id'];
+
+            $db = M('log_record');
+            $map = array(
+                'userId' => $userId,
+                'operate' => 3,
+                'signId' => $signId,
+                'time' => $time,
+                'update_time' => $sign_time,
+                'operater' => $operater
+            );
+
+            $add = $db -> add($map);
+
+            if($add == true){
+                $json['detail'] = '添加成功';
+                $json['code'] = 'success';
+                $this -> ajaxReturn($json);
+            }else{
+                $json['detail'] = '添加失败，请联系管理员';
+                $json['code'] = 'fail';
+                $this -> ajaxReturn($json);
+            }
+        }else{
+            $json['detail'] = '添加失败';
+            $json['code'] = 'fail';
+            $this -> ajaxReturn($json);
+        }
     }
 }

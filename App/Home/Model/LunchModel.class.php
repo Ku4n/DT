@@ -30,7 +30,6 @@ class LunchModel extends Model
             $db = M('user');
             $update = $db -> where(['userId' => $userId]) -> save(['status' => 1]);
 
-
             if($update == true){
 
                 $db = M('signup');
@@ -41,7 +40,8 @@ class LunchModel extends Model
                     'operate' => 1,
                     'signId' => $signId,
                     'update_time' => $now,
-                    'time' => $time
+                    'time' => $time,
+                    'operater' => $userId
                 );
 
                 $db = M('log_record');
@@ -82,6 +82,7 @@ class LunchModel extends Model
                     'signId' => $signId,
                     'update_time' => $now,
                     'time' => $time,
+                    'operater' => $userId
                 );
 
                 $add = $db -> add($map);

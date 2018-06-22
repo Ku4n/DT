@@ -123,7 +123,7 @@ class IndexModel extends Model
 
         if($now > $lastTime && $now < $startTime){
             return false;
-        }elseif($now > $startTime && $now < $endTime){
+        }elseif($now >= $startTime && $endTime >= $now){
 
             $where['userId'] = $userId;
             $where['sign_time'] = array(array('lt' , $endTime) , array('gt' , $startTime));// 今天下午14点到凌晨24点
@@ -154,7 +154,7 @@ class IndexModel extends Model
                 }
             }
 
-        }elseif($now >= $lastTime && $now < $zero){
+        }elseif($now >= $lastTime && $zero >= $now){
 
             $where['userId'] = $userId;
             $where['sign_time'] = array(array('lt' , $lastTime) , array('gt' , $yesterday_two)); //昨天下午14点到今天9点

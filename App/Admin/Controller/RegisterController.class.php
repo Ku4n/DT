@@ -54,11 +54,6 @@ class RegisterController extends Controller{
         dump($person);
     }
 
-    public function add(){
-
-        $db = M('signup');
-
-    }
 
 
 }
