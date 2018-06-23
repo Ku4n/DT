@@ -10,7 +10,7 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class MemberController extends Controller{
+class MemberController extends CommonController{
 
 
     public function index(){

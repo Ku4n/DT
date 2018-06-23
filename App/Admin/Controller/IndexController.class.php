@@ -97,9 +97,9 @@ class IndexController extends Controller{
     public function get_code(){
 
         $get_token = self::login();
-        $code = $get_token['code'];
+        $code = I('param.code');
         $access_token = $get_token['access_token'];
-        $url = 'https://oapi.dingtalk.com/user/getuserinfo?access_token='.$access_token.'&code='.$code.'';
+        $url = 'https://oapi.dingtalk.com/sso/getuserinfo?access_token='.$access_token.'&code='.$code.'';
         $data = json_decode(self::curl_get($url),true);
         if($data['errcode'] !== 0){
             return false;

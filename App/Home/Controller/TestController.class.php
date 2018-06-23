@@ -10,7 +10,7 @@ namespace Home\Controller;
 
 use Think\Controller;
 
-class TestController extends Controller
+class TestController extends CommonController
 {
 
 
@@ -19,21 +19,47 @@ class TestController extends Controller
         echo 1;
     }
 
+    public function curl_post($url, array $post = NULL, array $options = array())
+    {
+
+        $defaults = array(
+            CURLOPT_POST => 1,
+            CURLOPT_HEADER => 0,
+            CURLOPT_URL => $url,
+            CURLOPT_FRESH_CONNECT => 1,
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_FORBID_REUSE => 1,
+            CURLOPT_TIMEOUT => 4,
+            CURLOPT_POSTFIELDS => http_build_query($post)
+        );
+
+        $ch = curl_init();
+        curl_setopt_array($ch, ($options + $defaults));
+        if( ! $result = curl_exec($ch))
+        {
+            trigger_error(curl_error($ch));
+        }
+        curl_close($ch);
+        return $result;
+    }
+
 
     public function test(){
 
-        $db = M('signup');
-        $xlsData = $db -> select();
-        $xlsName = 'Excel测试';
-        $xlsCell = array(
-            array('id','ID'),
-            array('userid','用户ID'),
-            array('sign_time','登录时间'),
-            array('time','登陆时间')
-        );
+        for($i = 1 ; $i < 221 ; $i++){
+            $url = 'https://aapi.sport147.cn/Manage/BankrollApi/StatisticPeriod';
+            $data = json_decode(self::curl_post($url),true);
+            $xlsData = $data;
+            $xlsName = 'Excel测试';
+            $xlsCell = array(
+                array('date','date'),
+                array('detail','信息'),
+                array('msg','信息'),
+            );
 
-        $this -> exportExcel($xlsName,$xlsCell,$xlsData);
-        exit();
+            //$this -> exportExcel($xlsName,$xlsCell,$xlsData);
+            //exit();
+        }
     }
 
 
